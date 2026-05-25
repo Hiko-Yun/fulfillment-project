@@ -1,0 +1,672 @@
+/* ==========================================================================
+   1. ИНИЦИАЛИЗАЦИЯ И СБРОС (RESET)
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.grid-3-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* ==========================================================================
+   2. ШАПКА САЙТА (HEADER)
+   ========================================================================== */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0 20px 0;
+}
+
+.logo img {
+  max-height: 45px;
+}
+
+.rating-widgets {
+  display: flex;
+  gap: 15px;
+}
+
+.yandex-box,
+.avito-box {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  border: 1px solid #eef0f3;
+  border-radius: 10px;
+  background: #fcfdfe;
+  font-size: 12px;
+}
+
+.yandex-box a,
+.avito-box a {
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.rating {
+  color: #ffb700;
+  font-weight: 700;
+}
+
+.reviews {
+  color: #828693;
+  font-size: 11px;
+}
+
+.header-contacts {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.callback-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.callback-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: #828693;
+}
+
+.callback-links .callback-trigger {
+  color: #7b61ff;
+  font-weight: 600;
+  border-bottom: 1px dashed #7b61ff;
+}
+
+.callback-links .callback-trigger:hover {
+  color: #5a3edb;
+  border-color: transparent;
+}
+
+.phone-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.phone-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+}
+
+.header-nav {
+  border-top: 1px solid #f0f2f5;
+  border-bottom: 1px solid #f0f2f5;
+  padding: 15px 0;
+}
+
+.header-nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 40px;
+}
+
+.header-nav ul li a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #616571;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header-nav ul li a:hover,
+.header-nav ul li.active a {
+  color: #7b61ff;
+}
+
+/* ==========================================================================
+   3. ГЛАВНЫЙ ЭКРАН (HERO С АДАПТИВНЫМ ВИДЕО-ИНТЕРАКТИВОМ)
+   ========================================================================== */
+.hero-advanced-section {
+  width: 100%;
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.hero-layout-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* Левая сторона с текстом */
+.hero-text-side {
+  flex: 0 0 42%;
+  max-width: 480px;
+}
+
+.hero-tagline {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ff7a50;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero-text-p {
+  font-size: 15px;
+  color: #616571;
+  margin-bottom: 30px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  border-left: 3px solid #7b61ff;
+  padding-left: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.stat-desc {
+  font-size: 13px;
+  color: #828693;
+  font-weight: 500;
+}
+
+.btn-main {
+  background-color: #7b61ff;
+  color: #ffffff;
+  border: none;
+  padding: 18px 36px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(123, 97, 255, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-main:hover {
+  background-color: #5a3edb;
+  transform: translateY(-2px);
+}
+
+/* Правая сторона с видео-интерактивом */
+.hero-interactive-side {
+  flex: 0 0 55%;
+  width: 100%;
+}
+
+.map-viewport-clean {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Задает идеальное соотношение сторон без рамок */
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  cursor: zoom-in;
+  background: #101012;
+}
+
+.map-container-clean {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.15s ease-out; /* Плавный и быстрый зум */
+  will-change: transform, transform-origin;
+}
+
+.map-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Точки-плюсики поверх видео */
+.map-point {
+  position: absolute;
+  z-index: 10;
+}
+
+.point-trigger {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #7b61ff;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(123, 97, 255, 0.4);
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.point-trigger:hover {
+  transform: scale(1.2) rotate(90deg);
+  background-color: #ff7a50;
+}
+
+/* ==========================================================================
+   4. ПОЛНОЭКРАННЫЕ ОКНА ДЛЯ ВЫВОДА ТВОИХ КВЕСТ-КАРТИНОК
+   ========================================================================== */
+.art-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 22, 0.9); /* Премиальный глубокий темный фон */
+  backdrop-filter: blur(10px); /* Красивое размытие */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+/* Класс переключения видимости из JS */
+.art-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.art-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.art-modal-content img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  display: block;
+  object-fit: contain;
+}
+
+.art-modal-close {
+  position: absolute;
+  top: -55px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 45px;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.art-modal-close:hover {
+  color: #ff7a50;
+}
+
+/* ==========================================================================
+   5. БЕСКОНЕЧНАЯ КАРУСЕЛЬ ЛОГОТИПОВ
+   ========================================================================== */
+.partners-carousel {
+  padding: 40px 0;
+  border-top: 1px solid #f0f2f5;
+  border-bottom: 1px solid #f0f2f5;
+  overflow: hidden;
+  position: relative;
+}
+
+.logos-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLinear 25s linear infinite;
+}
+
+.logos-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 80px;
+  padding-right: 80px;
+}
+
+.logos-group img {
+  height: 35px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+
+.logos-group img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scrollLinear {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================================================
+   6. ОСТАЛЬНЫЕ БЛОКИ ИЗ ТЗ (ПРАЙС, КАРТОЧКИ, FAQ, ПОДВАЛ)
+   ========================================================================== */
+.work-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #eef0f3;
+  transition: all 0.3s ease;
+}
+
+.work-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.work-card p {
+  padding: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.service-card {
+  background: #fcfdfe;
+  border: 1px solid #eef0f3;
+  border-radius: 16px;
+  padding: 40px 30px;
+  transition: all 0.3s ease;
+}
+
+.service-icon {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 25px;
+}
+
+.service-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #616571;
+}
+
+.service-card:hover {
+  background: #ffffff;
+  border-color: #7b61ff;
+  box-shadow: 0 15px 35px rgba(123, 97, 255, 0.05);
+}
+
+.calc-block {
+  background: #f9faff;
+  border: 1px solid #e8ecff;
+  border-radius: 24px;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.calc-subtitle {
+  color: #616571;
+  margin-top: -30px;
+  margin-bottom: 40px;
+}
+
+.calc-placeholder {
+  background: #ffffff;
+  border: 2px dashed #d2d9ff;
+  border-radius: 16px;
+  padding: 50px;
+  color: #7b61ff;
+  font-weight: 600;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  border: 1px solid #eef0f3;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 20px 25px;
+}
+
+.faq-question {
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #616571;
+  border-top: 1px solid #f5f7fa;
+  padding-top: 10px;
+}
+
+.form-banner {
+  background: linear-gradient(135deg, #7b61ff 0%, #5a3edb 100%);
+  border-radius: 24px;
+  padding: 50px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.form-text h3 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.form-fields {
+  display: flex;
+  gap: 15px;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.form-fields input {
+  width: 100%;
+  max-width: 320px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+
+.form-fields input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-fields button {
+  background: #ffffff;
+  color: #7b61ff;
+  border: none;
+  padding: 16px 30px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.form-fields button:hover {
+  background: #fff4f0;
+  color: #ff7a50;
+}
+
+footer {
+  background: #f9faff;
+  border-top: 1px solid #eef0f3;
+  padding: 60px 0 30px 0;
+  margin-top: auto;
+}
+
+.footer-blocks {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.footer-blocks h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-blocks p,
+.footer-blocks ul li a {
+  font-size: 14px;
+  color: #616571;
+}
+
+.footer-blocks ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-phone {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 10px;
+}
+
+footer hr {
+  border: none;
+  border-top: 1px solid #eef0f3;
+  margin-bottom: 25px;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #828693;
+  text-align: center;
+}

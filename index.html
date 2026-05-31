@@ -7,32 +7,37 @@
       Мурмурация — Фулфилмент и ответственное хранение для маркетплейсов
     </title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/png" href="img/ICO.png">
   </head>
   <body>
     <div class="wrapper">
       <header class="container">
         <div class="header-top">
           <a href="./" class="logo">
-            <img src="img/logo.png" alt="Мурмурация" />
+            <img src="img/logo.png" alt="Мурмурация — фулфилмент под ключ" />
           </a>
 
           <div class="rating-widgets">
-            <div class="yandex-box">
-              <a
-                href="https://yandex.ru/maps/org/murmuratsiya/7626932796"
-                target="_blank"
-                >Яндекс</a
-              >
+            <a
+              href="https://yandex.ru/maps/-/CPHtiZzV"
+              target="_blank"
+              class="rating-box yandex-box"
+            >
+              <span class="box-title">Яндекс</span>
               <span class="rating">★ 5.0</span>
               <span class="reviews">968 отзывов</span>
-            </div>
-            <div class="avito-box">
-              <a href="https://www.avito.ru/" target="_blank">Avito</a>
+            </a>
+
+            <a
+              href="https://www.avito.ru/"
+              target="_blank"
+              class="rating-box avito-box"
+            >
+              <span class="box-title">Avito</span>
               <span class="rating">★ 5.0</span>
               <span class="reviews">139 отзывов</span>
-            </div>
+            </a>
           </div>
-
           <div class="header-contacts">
             <div class="callback-links">
               <a href="contact.html">Контакты</a>
@@ -43,253 +48,472 @@
                 >+7 (945) 909-06-24</a
               >
               <div class="social-icons">
-                <a href="#" target="_blank"
-                  ><img src="img/telegram.svg" alt="Telegram"
-                /></a>
-                <a href="#" target="_blank"
-                  ><img src="img/max.svg" alt="Написать в Макс"
-                /></a>
+                <a href="#" target="_blank" rel="noopener">
+                  <img src="img/Telegram.png" alt="Написать нам в Telegram" />
+                </a>
+                <a href="#" target="_blank" rel="noopener">
+                  <img src="img/MAX-512x512.png" alt="Написать нам в Макс" />
+                </a>
               </div>
             </div>
           </div>
         </div>
 
         <nav class="header-nav">
+          <button
+            class="burger-menu-btn"
+            aria-label="Открыть меню"
+            onclick="toggleMobileMenu()"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
           <ul>
-            <li class="active"><a href="./">Главная</a></li>
-            <li><a href="#price">Прайс</a></li>
-            <li><a href="#calculator">Калькулятор</a></li>
-            <li><a href="#examples">Примеры работ</a></li>
-            <li><a href="#reviews">Отзывы</a></li>
-            <li><a href="#faq">Вопросы</a></li>
-            <li><a href="#about">О нас</a></li>
+            <li><a href="./">Главная</a></li>
+            <li><a href="./#price">Прайс</a></li>
+            <li><a href="./#calculator">Калькулятор</a></li>
+            <li><a href="./#examples">Примеры работ</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="./#faq">Вопросы</a></li>
+            <li><a href="about.html">О нас</a></li>
           </ul>
         </nav>
       </header>
 
-      <section class="hero-advanced-section">
-        <div class="container hero-layout-wrapper">
-          <div class="hero-text-side">
-            <p class="hero-tagline">
-              ФУЛФИЛМЕНТ И ОТВЕТСТВЕННОЕ ХРАНЕНИЕ ДЛЯ МАРКЕТПЛЕЙСОВ ПОД КЛЮЧ
-            </p>
-            <h1 class="hero-title">
-              Фулфилмент без ошибок, штрафов и задержек
-            </h1>
-            <p class="hero-text-p">
-              Берем на себя приёмку, проверку, упаковку и отгрузку ваших товаров
-              на Wildberries, Ozon, Яндекс Маркет. Позвольте вашему бизнесу
-              отгружаться без ошибок и быстро масштабироваться.
-            </p>
+      <main>
+        <section class="hero-advanced-section">
+          <div class="container hero-layout-wrapper">
+            <div class="hero-text-side">
+              <p class="hero-tagline">
+                ФУЛФИЛМЕНТ И ОТВЕТСТВЕННОЕ ХРАНЕНИЕ ДЛЯ МАРКЕТПЛЕЙСОВ ПОД КЛЮЧ
+              </p>
+              <h1 class="hero-title">
+                Фулфилмент без ошибок, штрафов и задержек
+              </h1>
+              <p class="hero-text-p">
+                Берем на себя приёмку, проверку, упаковку и отгрузку ваших
+                товаров на Wildberries, Ozon, Яндекс Маркет. Позвольте вашему
+                бизнесу отгружаться без ошибок и быстро масштабироваться.
+              </p>
 
-            <div class="hero-stats">
-              <div class="stat-item">
-                <span class="stat-num">5700 м²</span>
-                <span class="stat-desc">Площадь собственного склада</span>
+              <div class="hero-stats">
+                <div class="stat-item">
+                  <span class="stat-num">5700 м²</span>
+                  <span class="stat-desc">Площадь собственного склада</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-num">50 000</span>
+                  <span class="stat-desc"
+                    >Единиц товара упаковываем в день</span
+                  >
+                </div>
               </div>
-              <div class="stat-item">
-                <span class="stat-num">50 000</span>
-                <span class="stat-desc">Единиц товара упаковываем в день</span>
+
+              <button class="btn-main" onclick="ScrollToCalc()">
+                Рассчитать стоимость под ваш ТЗ
+              </button>
+            </div>
+
+            <div class="hero-interactive-side">
+              <div id="viewport" class="map-viewport-clean">
+                <div id="heroContainer" class="map-container-clean">
+                  <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    disablePictureInPicture
+                    class="map-video-element"
+                  >
+                    <source
+                      src="vid/animate_this_isometric_3D_cityscape_scene._Make_the_city_feel_alive_and_bustling_at_night._Miniature_seed4258162185.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+
+                  <div class="map-point" style="top: 30%; left: 35%">
+                    <button
+                      class="point-trigger"
+                      onclick="openArtModal('modal-gate', event)"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div class="map-point" style="top: 50%; left: 65%">
+                    <button
+                      class="point-trigger"
+                      onclick="openArtModal('modal-park', event)"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div class="map-point" style="top: 75%; left: 45%">
+                    <button
+                      class="point-trigger"
+                      onclick="openArtModal('modal-storage', event)"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="partners-carousel container">
+          <div class="logos-track">
+            <div class="logos-group">
+              <a
+                href="https://www.wildberries.ru/"
+                target="_blank"
+                rel="noopener"
+                ><img src="img/wildberries-sign-logo.png" alt="WB"
+              /></a>
+              <a href="https://www.ozon.ru/" target="_blank" rel="noopener"
+                ><img src="img/icons8-озон-48.png" alt="Ozon"
+              /></a>
+              <a href="https://market.yandex.ru/" target="_blank" rel="noopener"
+                ><img src="img/yandex-market-sign-logo.png" alt="Яндекс"
+              /></a>
+              <a href="https://www.avito.ru/" target="_blank" rel="noopener"
+                ><img src="img/avito-logo.png" alt="Avito"
+              /></a>
+              <a
+                href="https://www.wildberries.ru/"
+                target="_blank"
+                rel="noopener"
+                ><img src="img/wildberries-sign-logo.png" alt="WB"
+              /></a>
+              <a href="https://www.ozon.ru/" target="_blank" rel="noopener"
+                ><img src="img/icons8-озон-48.png" alt="Ozon"
+              /></a>
+              <a href="https://market.yandex.ru/" target="_blank" rel="noopener"
+                ><img src="img/yandex-market-sign-logo.png" alt="Яндекс"
+              /></a>
+              <a href="https://www.avito.ru/" target="_blank" rel="noopener"
+                ><img src="img/avito-logo.png" alt="Avito"
+              /></a>
+            </div>
+
+            <div class="logos-group" aria-hidden="true">
+              <a
+                href="https://www.wildberries.ru/"
+                target="_blank"
+                rel="noopener"
+                tabindex="-1"
+                ><img src="img/wildberries-sign-logo.png" alt="WB"
+              /></a>
+              <a
+                href="https://www.ozon.ru/"
+                target="_blank"
+                rel="noopener"
+                tabindex="-1"
+                ><img src="img/icons8-озон-48.png" alt="Ozon"
+              /></a>
+              <a
+                href="https://market.yandex.ru/"
+                target="_blank"
+                rel="noopener"
+                tabindex="-1"
+                ><img src="img/yandex-market-sign-logo.png" alt="Яндекс"
+              /></a>
+              <a
+                href="https://www.avito.ru/"
+                target="_blank"
+                rel="noopener"
+                tabindex="-1"
+                ><img src="img/avito-logo.png" alt="Avito"
+              /></a>
+              <a
+                href="https://www.wildberries.ru/"
+                target="_blank"
+                rel="noopener"
+                tabindex="-1"
+                ><img src="img/wildberries-sign-logo.png" alt="WB"
+              /></a>
+              <a
+                href="https://www.ozon.ru/"
+                target="_blank"
+                rel="noopener"
+                tabindex="-1"
+                ><img src="img/icons8-озон-48.png" alt="Ozon"
+              /></a>
+              <a
+                href="https://market.yandex.ru/"
+                target="_blank"
+                rel="noopener"
+                tabindex="-1"
+                ><img src="img/yandex-market-sign-logo.png" alt="Яндекс"
+              /></a>
+              <a
+                href="https://www.avito.ru/"
+                target="_blank"
+                rel="noopener"
+                tabindex="-1"
+                ><img src="img/avito-logo.png" alt="Avito"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <section id="examples" class="container section-padding">
+          <h2 class="section-title">Примеры работ на упаковку</h2>
+          <div class="grid-3-columns">
+            <div class="work-card">
+              <img
+                src="img/Примеры упаковки/kombinir-fanernaya-tara-198.jpg"
+                alt="Индивидуальная упаковка сложных грузов на складе"
+              />
+              <p>Индивидуальная упаковка сложных грузов</p>
+            </div>
+            <div class="work-card">
+              <img
+                src="img/Примеры упаковки/maxresdefault.jpg"
+                alt="Процесс маркировки и подготовки товаров к отправке на WB"
+              />
+              <p>Маркировка и подготовка к отправке на WB</p>
+            </div>
+            <div class="work-card">
+              <img
+                src="img/Примеры упаковки/348390727.jfif"
+                alt="Паллетирование и сборка партий товаров"
+              />
+              <p>Паллетирование и подготовка сборных грузов</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="price" class="container section-padding">
+          <h2 class="section-title">Дополнительные услуги под ваши задачи</h2>
+          <div class="grid-3-columns">
+            <div class="service-card">
+              <img
+                src="img/Доп услуги/editor-236750-scaled.png"
+                alt="Сортировка и приёмка товаров на складе"
+                class="service-icon"
+              />
+              <h4>Приёмка и сортировка</h4>
+              <p>
+                Тщательно пересчитаем каждую единицу товара, проверим на брак по
+                ТЗ.
+              </p>
+            </div>
+            <div class="service-card">
+              <img
+                src="img/Доп услуги/i.webp"
+                alt="Ответственное хранение грузов маркетплейсов"
+                class="service-icon"
+              />
+              <h4>Хранение грузов</h4>
+              <p>
+                Ответственное хранение на сухом, охраняемом складе класса А.
+              </p>
+            </div>
+            <div class="service-card">
+              <img
+                src="img/Доп услуги/maxresdefault.jpg"
+                alt="Доставка коробов и паллет на склады маркетплейсов"
+                class="service-icon"
+              />
+              <h4>Доставка на маркетплейсы</h4>
+              <p>
+                Собственная логистика, ежедневные отгрузки на любые склады
+                маркетплейсов.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="calculator" class="container section-padding">
+          <div class="calc-block">
+            <h2 class="section-title">Узнайте стоимость за 1 минуту</h2>
+            <p class="calc-subtitle">
+              Введите ваши параметры и получите предварительный расчет стоимости
+              услуг
+            </p>
+            <div class="calc-placeholder">
+              <p>[ Место под интерактивный JS-калькулятор стоимости ]</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="container section-padding">
+          <h2 class="section-title">FAQ — Часто задаваемые вопросы</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Как быстро вы принимаете товар на склад?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Приемка и пересчет осуществляются в течение 24 часов с момента
+                  прибытия груза на наш склад. Вы сразу получаете акт приемки со
+                  всеми данными.
+                </p>
               </div>
             </div>
 
-            <button class="btn-main" onclick="ScrollToCalc()">
-              Рассчитать стоимость под ваш ТЗ
-            </button>
-          </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Что происходит в случае обнаружения брака?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Мы немедленно фиксируем брак на photo или video и отправляем
+                  отчет вам в мессенджеры (Telegram/WhatsApp). Такой товар
+                  откладывается в отдельную зону карантина до ваших
+                  распоряжений.
+                </p>
+              </div>
+            </div>
 
-          <div class="hero-interactive-side">
-            <div id="viewport" class="map-viewport-clean">
-              <div id="heroContainer" class="map-container-clean">
-                <video
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                  disablePictureInPicture
-                  class="map-video-element"
+            <div class="faq-item">
+              <div class="faq-question">
+                <span
+                  >С какими маркетплейсами вы работаете и по каким схемам?</span
                 >
-                  <source
-                    src="vid/animate_this_isometric_3D_cityscape_scene._Make_the_city_feel_alive_and_bustling_at_night._Miniature_seed4258162185.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Мы полностью упаковываем и доставляем товары на Wildberries,
+                  Ozon и Яндекс Маркет. Работаем как по схеме FBO (отгрузка на
+                  склад маркетплейса), так и по FBS (хранение у нас, сборка и
+                  доставка под каждый заказ ежедневно).
+                </p>
+              </div>
+            </div>
 
-                <div class="map-point" style="top: 30%; left: 35%">
-                  <button
-                    class="point-trigger"
-                    onclick="openArtModal('modal-gate', event)"
-                  >
-                    +
-                  </button>
-                </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Есть ли у вас минимальный объем партии для работы?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Мы работаем как с крупными брендами, так и с начинающими
+                  селлерами. Минимальной партии нет — мы можем принять и
+                  обработать тестовую партию даже от 10-50 единиц товара.
+                </p>
+              </div>
+            </div>
 
-                <div class="map-point" style="top: 50%; left: 65%">
-                  <button
-                    class="point-trigger"
-                    onclick="openArtModal('modal-park', event)"
-                  >
-                    +
-                  </button>
-                </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Несете ли вы материальную ответственность за товар?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Да, этот пункт жестко прописан в нашем договоре. Мы несем
+                  полную материальную ответственность за сохранность вашего
+                  товар с момента подписания акта приемки на нашем складе.
+                </p>
+              </div>
+            </div>
 
-                <div class="map-point" style="top: 75%; left: 45%">
-                  <button
-                    class="point-trigger"
-                    onclick="openArtModal('modal-storage', event)"
-                  >
-                    +
-                  </button>
-                </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Помогаете ли вы с маркировкой "Честный Знак"?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Да, наши специалисты умеют работать со всеми категориями
+                  подлежащими обязательной маркировке (одежда, текстиль, обувь и
+                  т.д.). Вы передаете нам коды из личного кабинета, мы их
+                  распечатываем, верифицируем сканерами и наносим строго по
+                  правилам системы.
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <div class="partners-carousel container">
-        <div class="logos-track">
-          <div class="logos-group">
-            <img src="img/wildberries-sign-logo.png" alt="Wildberries" />
-            <img src="img/icons8-озон-48.png" alt="Ozon" />
-            <img src="img/yandex-market-sign-logo.png" alt="Яндекс Маркет" />
-            <img src="img/avito-logo.png" alt="Avito" />
-          </div>
-          <div class="logos-group" aria-hidden="true">
-            <img src="img/wildberries-sign-logo.png" alt="Wildberries" />
-            <img src="img/icons8-озон-48.png" alt="Ozon" />
-            <img src="img/yandex-market-sign-logo.png" alt="Яндекс Маркет" />
-            <img src="img/avito-logo.png" alt="Avito" />
-          </div>
-          </div>
-        </div>
-      </div>
+        <section class="container section-padding">
+          <div class="form-banner">
+            <div class="form-text">
+              <h3>Заполни форму, подберем решение под ваш бизнес</h3>
+              <p>И покажем, как все устроено внутри нашего фулфилмента</p>
+            </div>
 
-      <section id="examples" class="container section-padding">
-        <h2 class="section-title">Примеры работ на упаковку</h2>
-        <div class="grid-3-columns">
-          <div class="work-card">
-            <img src="img/Примеры упаковки/kombinir-fanernaya-tara-198.jpg" alt="Пример упаковки 1" />
-            <p>Индивидуальная упаковка сложных грузов</p>
-          </div>
-          <div class="work-card">
-            <img src="img/Примеры упаковки/maxresdefault.jpg" alt="Пример упаковки 2" />
-            <p>Маркировка и подготовка к отправке на WB</p>
-          </div>
-          <div class="work-card">
-            <img src="img/Примеры упаковки/348390727.jfif" alt="Пример упаковки 3" />
-            <p>Паллетирование и подготовка сборных грузов</p>
-          </div>
-        </div>
-      </section>
+            <div
+              class="form-fields"
+              style="flex-direction: column; align-items: flex-end"
+            >
+              <input
+                type="email"
+                id="userEmail"
+                placeholder="Введите ваш email адрес"
+              />
 
-      <section id="price" class="container section-padding">
-        <h2 class="section-title">Дополнительные услуги под ваши задачи</h2>
-        <div class="grid-3-columns">
-          <div class="service-card">
-            <img src="img/Доп услуги/editor-236750-scaled.png" alt="" class="service-icon" />
-            <h4>Приёмка и сортировка</h4>
+              <div class="privacy-agreement">
+                <input
+                  type="checkbox"
+                  id="privacy-check"
+                  name="privacy"
+                  required
+                />
+                <label for="privacy-check">
+                  Я согласен на
+                  <a href="privacy-policy.html" target="_blank"
+                    >обработку персональных данных</a
+                  >
+                </label>
+              </div>
+
+              <button onclick="ValidateBusinessEmail()">
+                Подобрать решение
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-blocks container">
+          <div>
+            <span class="logo">Мурмурация</span>
             <p>
-              Тщательно пересчитаем каждую единицу товара, проверим на брак по
-              ТЗ.
+              Надежный фулфилмент-партнер для вашего масштабирования на
+              маркетплейсах.
             </p>
           </div>
-          <div class="service-card">
-            <img src="img/Доп услуги/i.webp" alt="" class="service-icon" />
-            <h4>Хранение грузов</h4>
-            <p>Ответственное хранение на сухом, охраняемом складе класса А.</p>
+          <div>
+            <p class="footer-title">Навигация</p>
+            <ul>
+              <li><a href="#price">Прайс</a></li>
+              <li><a href="#calculator">Калькулятор</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
           </div>
-          <div class="service-card">
-            <img src="img/Доп услуги/maxresdefault.jpg" alt="" class="service-icon" />
-            <h4>Доставка на маркетплейсы</h4>
-            <p>
-              Собственная логистика, ежедневные отгрузки на любые склады
-              маркетплейсов.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="calculator" class="container section-padding">
-        <div class="calc-block">
-          <h2 class="section-title">Узнайте стоимость за 1 минуту</h2>
-          <p class="calc-subtitle">
-            Введите ваши параметры и получите предварительный расчет стоимости
-            услуг
-          </p>
-          <div class="calc-placeholder">
-            <p>[ Место под интерактивный JS-калькулятор стоимости ]</p>
+          <div>
+            <p class="footer-title">Контакты</p>
+            <p>г. Москва, складской комплекс "Мурмурация"</p>
+            <p class="footer-phone">+7 (945) 909-06-24</p>
           </div>
         </div>
-      </section>
-
-      <section id="faq" class="container section-padding">
-        <h2 class="section-title">FAQ — Часто задаваемые вопросы</h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <div class="faq-question">
-              Как быстро вы принимаете товар на склад?
-            </div>
-            <div class="faq-answer">
-              Приемка осуществляется в течение 24 часов с момента прибытия груза
-              на наш склад.
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              Что происходит в случае обнаружения брака?
-            </div>
-            <div class="faq-answer">
-              Мы немедленно фиксируем брак на фото/видео и отправляем отчет вам
-              в мессенджеры. Такой товар откладывается отдельно.
-            </div>
-          </div>
+        <hr />
+        <div
+          class="footer-legal"
+          style="text-align: center; margin-bottom: 10px"
+        >
+          <a
+            href="privacy-policy.html"
+            style="font-size: 13px; color: #828693; text-decoration: underline"
+            >Политика конфиденциальности</a
+          >
         </div>
-      </section>
-
-      <section class="container section-padding">
-        <div class="form-banner">
-          <div class="form-text">
-            <h3>Заполните форму, подберем решение под ваш бизнес</h3>
-            <p>И покажем, как все устроено внутри нашего фулфилмента</p>
-          </div>
-          <div class="form-fields">
-            <input
-              type="email"
-              id="userEmail"
-              placeholder="Введите ваш email адрес"
-            />
-            <button onclick="ValidateBusinessEmail()">Подобрать решение</button>
-          </div>
-        </div>
-      </section>
+        <p class="copyright">
+          Copyright ® 2026 Мурмурация. Все права защищены.
+        </p>
+      </footer>
     </div>
-    <footer>
-      <div class="footer-blocks container">
-        <div>
-          <span class="logo">Мурмурация</span>
-          <p>
-            Надежный фулфилмент-партнер для вашего масштабирования на
-            маркетплейсах.
-          </p>
-        </div>
-        <div>
-          <h4>Навигация</h4>
-          <ul>
-            <li><a href="#price">Прайс</a></li>
-            <li><a href="#calculator">Калькулятор</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Контакты</h4>
-          <p>г. Москва, складской комплекс "Мурмурация"</p>
-          <p class="footer-phone">+7 (945) 909-06-24</p>
-        </div>
-      </div>
-      <hr />
-      <p class="copyright">Copyright ® 2026 Мурмурация. Все права защищены.</p>
-    </footer>
 
     <div
       id="modal-gate"
@@ -298,9 +522,9 @@
     >
       <div class="art-modal-content" onclick="event.stopPropagation()">
         <button class="art-modal-close" onclick="closeArtModal('modal-gate')">
-          ×
+          &times;
         </button>
-        <img src="img/Южные ворота.png" alt="Южные ворота" />
+        <img src="img/Южные ворота.png" alt="Складская зона Южные ворота" />
       </div>
     </div>
 
@@ -311,9 +535,12 @@
     >
       <div class="art-modal-content" onclick="event.stopPropagation()">
         <button class="art-modal-close" onclick="closeArtModal('modal-park')">
-          ×
+          &times;
         </button>
-        <img src="img/Фулфилмент парк.png" alt="Фулфилмент парк" />
+        <img
+          src="img/Фулфилмент парк.png"
+          alt="Логистический Фулфилмент парк"
+        />
       </div>
     </div>
 
@@ -327,25 +554,83 @@
           class="art-modal-close"
           onclick="closeArtModal('modal-storage')"
         >
-          ×
+          &times;
         </button>
-        <img src="img/Склад.png" alt="Склад" />
+        <img src="img/Склад.png" alt="Основной комплекс Склад" />
       </div>
     </div>
 
+    <div id="call-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close" id="close-modal-btn">&times;</button>
+        <h3>Заказать обратный звонок</h3>
+        <p>
+          Оставьте свои контакты, и наш менеджер свяжется с вами в течение 10
+          минут.
+        </p>
+
+        <form id="modal-form">
+          <input
+            type="text"
+            class="modal-input"
+            placeholder="Ваше имя"
+            required
+          />
+          <input
+            type="tel"
+            id="modal-phone"
+            class="modal-input"
+            placeholder="+7 (___) ___-__-__"
+            required
+          />
+
+          <div class="modal-privacy">
+            <input
+              type="checkbox"
+              id="modal-privacy-check"
+              name="privacy"
+              required
+            />
+            <label for="modal-privacy-check">
+              Я согласен на
+              <a href="privacy-policy.html" target="_blank"
+                >обработку персональных данных</a
+              >
+            </label>
+          </div>
+
+          <button type="submit" class="modal-submit-btn">
+            Перезвоните мне
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="cookie-notice" class="cookie-banner">
+      <p>
+        Мы используем файлы cookie для повышения удобства работы с сайтом.
+        Продолжая использовать сайт, вы соглашаетесь с нашей
+        <a href="privacy-policy.html" target="_blank"
+          >Политикой конфиденциальности</a
+        >.
+      </p>
+      <button id="cookie-accept" class="cookie-btn">Хорошо</button>
+    </div>
+
     <script>
-      // 1. Скрипт Интерактивной Лупы (Зум х2 как в твоем чистом тесте)
+      // --- 1. ЛУПА / ЗУМ НА КАРТЕ ---
       const viewport = document.getElementById("viewport");
       const container = document.getElementById("heroContainer");
 
       viewport.addEventListener("mousemove", (e) => {
-        // Если открыта полноэкранная картинка, отключаем изменение зума под ней
-        if (document.querySelector(".art-overlay.is-visible")) return;
-
+        if (
+          document.querySelector(".art-overlay.is-visible") ||
+          document.querySelector(".modal-overlay.is-open")
+        )
+          return;
         const { left, top, width, height } = viewport.getBoundingClientRect();
         const x = ((e.clientX - left) / width) * 100;
         const y = ((e.clientY - top) / height) * 100;
-
         container.style.transformOrigin = `${x}% ${y}%`;
         container.style.transform = "scale(2)";
       });
@@ -357,54 +642,164 @@
         }
       });
 
-      // 2. Скрипт открытия и закрытия Полноэкранных Модалок с Квест-Картинками
+      // --- 2. МОДАЛКИ КАРТИНОК С КАРТЫ ---
       function openArtModal(modalId, event) {
-        if (event) event.stopPropagation(); // Отменяем всплытие клика
-
-        // Перед открытием сбрасываем зум фонового видео назад на x1
+        if (event) event.stopPropagation();
         container.style.transform = "scale(1)";
         container.style.transformOrigin = "center center";
-
         const modal = document.getElementById(modalId);
         modal.classList.add("is-visible");
-        document.body.style.overflow = "hidden"; // Запрещаем скролл самого сайта
+        document.body.style.overflow = "hidden";
       }
 
       function closeArtModal(modalId) {
         const modal = document.getElementById(modalId);
         modal.classList.remove("is-visible");
-        document.body.style.overflow = ""; // Возвращаем скролл сайта
+        document.body.style.overflow = "";
       }
 
-      // Закрытие картинок по клавише ESC
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          document.querySelectorAll(".art-overlay").forEach((modal) => {
-            modal.classList.remove("is-visible");
-          });
+      // --- 3. МОДАЛКА ЗАКАЗА ЗВОНКА (ОТКРЫТИЕ/ЗАКРЫТИЕ) ---
+      const callModal = document.getElementById("call-modal");
+      const openCallBtn = document.querySelector(".callback-trigger");
+      const closeCallBtn = document.getElementById("close-modal-btn");
+
+      openCallBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        callModal.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      });
+
+      closeCallBtn.addEventListener("click", function () {
+        callModal.classList.remove("is-open");
+        document.body.style.overflow = "";
+      });
+
+      callModal.addEventListener("click", function (event) {
+        if (event.target === callModal) {
+          callModal.classList.remove("is-open");
           document.body.style.overflow = "";
         }
       });
 
-      // 3. Плавный скролл до калькулятора
+      // Закрытие ВСЕХ окон по кнопке ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          document
+            .querySelectorAll(".art-overlay")
+            .forEach((m) => m.classList.remove("is-visible"));
+          callModal.classList.remove("is-open");
+          document.body.style.overflow = "";
+        }
+      });
+
+      // --- 4. УМНАЯ МАСКА ТЕЛЕФОНА (Защита от ввода букв) ---
+      const phoneInput = document.getElementById("modal-phone");
+
+      phoneInput.addEventListener("input", function (e) {
+        let input = e.target.value.replace(/\D/g, "");
+        let formatted = "";
+        if (!input) {
+          e.target.value = "";
+          return;
+        }
+        if (input[0] === "7" || input[0] === "8") {
+          input = input.substring(1);
+        }
+
+        formatted = "+7 ";
+        if (input.length > 0) {
+          formatted += "(" + input.substring(0, 3);
+        }
+        if (input.length >= 3) {
+          formatted += ") ";
+        }
+        if (input.length > 3) {
+          formatted += input.substring(3, 6);
+        }
+        if (input.length >= 6) {
+          formatted += "-";
+        }
+        if (input.length > 6) {
+          formatted += input.substring(6, 8);
+        }
+        if (input.length >= 8) {
+          formatted += "-";
+        }
+        if (input.length > 8) {
+          formatted += input.substring(8, 10);
+        }
+        e.target.value = formatted;
+      });
+
+      phoneInput.addEventListener("keydown", function (e) {
+        if (e.key === "Backspace" && e.target.value.length <= 4) {
+          e.target.value = "";
+        }
+      });
+
+      // --- 5. ЛОГИКА ДЛЯ ПЛАШКИ КУКИ ---
+      const cookieBanner = document.getElementById("cookie-notice");
+      const cookieAccept = document.getElementById("cookie-accept");
+
+      if (localStorage.getItem("cookie-accepted") === "true") {
+        cookieBanner.style.display = "none";
+      }
+
+      cookieAccept.addEventListener("click", function () {
+        cookieBanner.style.display = "none";
+        localStorage.setItem("cookie-accepted", "true");
+      });
+
+      // --- 6. СКРОЛЛ И ВАЛИДАЦИЯ EMAIL ---
       function ScrollToCalc() {
         document
           .getElementById("calculator")
           .scrollIntoView({ behavior: "smooth" });
       }
 
-      // 4. Валидация почты (модернизированный скрипт из твоего старого шаблона)
       function ValidateBusinessEmail() {
         let email = document.querySelector("#userEmail").value;
-        if (!email.includes("@"))
-          alert("Пожалуйста, введите корректный email (пропущен символ @)");
-        else if (!email.includes("."))
-          alert("Пожалуйста, введите корректный email (пропущен символ .)");
-        else
+        if (!email.includes("@") || !email.includes(".")) {
+          alert("Пожалуйста, введите корректный email адрес");
+        } else {
           alert(
             "Спасибо! Наш менеджер свяжется с вами и подберет решение для вашего бизнеса.",
           );
+        }
       }
+
+      // --- 7. ИНТЕРАКТИВНЫЙ АККОРДЕОН ДЛЯ СЕКЦИИ FAQ ---
+      document.addEventListener("DOMContentLoaded", () => {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+
+          question.addEventListener("click", () => {
+            item.classList.toggle("is-active");
+          });
+        });
+      });
+
+      // --- 8. Бургер для мобильной версии сайта ---
+      function toggleMobileMenu() {
+        const nav = document.querySelector(".header-nav");
+        nav.classList.toggle("open");
+
+        if (nav.classList.contains("open")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      }
+
+      document.querySelectorAll(".header-nav ul li a").forEach((link) => {
+        link.addEventListener("click", () => {
+          const nav = document.querySelector(".header-nav");
+          nav.classList.remove("open");
+          document.body.style.overflow = "";
+        });
+      });
     </script>
   </body>
 </html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты и реквизиты — Фулфилмент Мурмурация</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      /* Быстрые стили конкретно для этой страницы, чтобы не забивать основной CSS */
+      .contacts-page {
+        padding: 60px 0;
+      }
+      .contacts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        margin-top: 40px;
+      }
+      .contact-info-block h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+      }
+      .contact-info-block p {
+        font-size: 16px;
+        color: #616571;
+        margin-bottom: 25px;
+      }
+      .requisites-box {
+        background: #f9faff;
+        border: 1px solid #eef0f3;
+        border-radius: 16px;
+        padding: 30px;
+      }
+      .requisites-box h3 {
+        margin-bottom: 15px;
+      }
+      .req-list {
+        list-style: none;
+      }
+      .req-list li {
+        font-size: 14px;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dashed #eef0f3;
+        padding-bottom: 4px;
+      }
+      .req-list li span {
+        color: #828693;
+      }
+      .map-placeholder {
+        width: 100%;
+        height: 100%;
+        min-height: 350px;
+        background: #eef0f3;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+      .btn-back {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #7b61ff;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main class="container contacts-page">
+        <a href="./" class="btn-back">← На главную</a>
+
+        <h1 class="section-title" style="text-align: left; margin-bottom: 10px">
+          Контакты и реквизиты
+        </h1>
+        <p style="color: #616571">
+          Свяжитесь с нами любым удобным способом или приезжайте на экскурсию по
+          нашему складу
+        </p>
+
+        <div class="contacts-grid">
+          <div class="contact-info-side">
+            <div class="contact-info-block">
+              <h3>📍 Адрес нашего склада:</h3>
+              <p>
+                проспект Юных Ленинцев, 47 проспект Юных Ленинцев, 47, Подольск,
+                Московская область, 142111
+              </p>
+            </div>
+
+            <div class="contact-info-block">
+              <h3>📞 Телефон отдела продаж:</h3>
+              <p>
+                <a
+                  href="tel:+79459090624"
+                  style="font-weight: 700; color: #7b61ff"
+                  >+7 (945) 909-06-24</a
+                >
+                (График работы: пн-сб с 10:00 до 19:00)
+              </p>
+            </div>
+
+            <div class="contact-info-block">
+              <h3>✉️ Электронная почта:</h3>
+              <p>
+                <a href="mailto:info@murmuracia-ff.ru">info@murmuracia-ff.ru</a>
+                — по вопросам коммерческих предложений
+              </p>
+            </div>
+
+            <!-- ! Не выкладывать пока не поменяю информацию на настоящуюю -->
+            <div class="requisites-box">
+              <h3>Юридическая информация</h3>
+              <ul class="req-list">
+                <li>
+                  <span>Название организации:</span> ООО «МУРМУРАЦИЯ ФУЛФИЛМЕНТ»
+                </li>
+                <li><span>ИНН:</span> 7771234567</li>
+                <li><span>ОГРН:</span> 1267700123456</li>
+                <li>
+                  <span>Юридический адрес:</span> 115114, г. Москва, Павелецкая
+                  наб., д. 2, стр. 1
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contact-map-side">
+            <div class="map-placeholder">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/-/CPHtiZzV"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                allowfullscreen="true"
+                style="position: relative; border: 0"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

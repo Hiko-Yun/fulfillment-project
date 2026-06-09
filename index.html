@@ -7,12 +7,12 @@
       Мурмурация — Фулфилмент и ответственное хранение для маркетплейсов
     </title>
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="icon" type="image/png" href="img/ICO.png">
+    <link rel="icon" type="image/png" href="img/ICO.png" />
   </head>
   <body>
     <div class="wrapper">
-      <header class="container">
-        <div class="header-top">
+      <header>
+        <div class="header-top container">
           <a href="./" class="logo">
             <img src="img/logo.png" alt="Мурмурация — фулфилмент под ключ" />
           </a>
@@ -24,8 +24,8 @@
               class="rating-box yandex-box"
             >
               <span class="box-title">Яндекс</span>
-              <span class="rating">★ 5.0</span>
-              <span class="reviews">968 отзывов</span>
+              <span class="rating" id="live-ya-rating">★ 4.7</span>
+              <span class="reviews" id="live-ya-reviews">15 отзывов</span>
             </a>
 
             <a
@@ -34,13 +34,14 @@
               class="rating-box avito-box"
             >
               <span class="box-title">Avito</span>
-              <span class="rating">★ 5.0</span>
-              <span class="reviews">139 отзывов</span>
+              <span class="rating" id="live-avito-rating">★ —</span>
+              <span class="reviews" id="live-avito-reviews">— отзывов</span>
             </a>
           </div>
+
           <div class="header-contacts">
             <div class="callback-links">
-              <a href="contact.html">Контакты</a>
+              <a href="about.html">О нас</a>
               <a href="#call-modal" class="callback-trigger">Обратный звонок</a>
             </div>
             <div class="phone-block">
@@ -60,25 +61,27 @@
         </div>
 
         <nav class="header-nav">
-          <button
-            class="burger-menu-btn"
-            aria-label="Открыть меню"
-            onclick="toggleMobileMenu()"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div class="container header-nav-container">
+            <button
+              class="burger-menu-btn"
+              aria-label="Открыть меню"
+              onclick="toggleMobileMenu()"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
 
-          <ul>
-            <li><a href="./">Главная</a></li>
-            <li><a href="./#price">Прайс</a></li>
-            <li><a href="./#calculator">Калькулятор</a></li>
-            <li><a href="./#examples">Примеры работ</a></li>
-            <li><a href="reviews.html">Отзывы</a></li>
-            <li><a href="./#faq">Вопросы</a></li>
-            <li><a href="about.html">О нас</a></li>
-          </ul>
+            <ul>
+              <li><a href="./">Главная</a></li>
+              <li><a href="./#price">Прайс</a></li>
+              <li><a href="./#calculator">Калькулятор</a></li>
+              <li><a href="./#examples">Примеры работ</a></li>
+              <li><a href="reviews.html">Отзывы</a></li>
+              <li><a href="./#faq">Вопросы</a></li>
+              <li><a href="contact.html">Контакты</a></li>
+            </ul>
+          </div>
         </nav>
       </header>
 
@@ -99,20 +102,13 @@
               </p>
 
               <div class="hero-stats">
-                <div class="stat-item">
-                  <span class="stat-num">5700 м²</span>
-                  <span class="stat-desc">Площадь собственного склада</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-num">50 000</span>
-                  <span class="stat-desc"
-                    >Единиц товара упаковываем в день</span
-                  >
-                </div>
+                <div class="stat-item-phrase">До 30 000 единиц в день</div>
+                <div class="stat-item-phrase">Точность 99,8%</div>
+                <div class="stat-item-phrase">Полный цикл</div>
               </div>
 
               <button class="btn-main" onclick="ScrollToCalc()">
-                Рассчитать стоимость под ваш ТЗ
+                👉 Рассчитать стоимость под ваш ТЗ
               </button>
             </div>
 
@@ -261,26 +257,132 @@
 
         <section id="examples" class="container section-padding">
           <h2 class="section-title">Примеры работ на упаковку</h2>
+
           <div class="grid-3-columns">
-            <div class="work-card">
-              <img
-                src="img/Примеры упаковки/kombinir-fanernaya-tara-198.jpg"
-                alt="Индивидуальная упаковка сложных грузов на складе"
-              />
+            <div class="work-card slider-card">
+              <div class="before-after-slider">
+                <div class="slider-img img-after">
+                  <img
+                    src="img/Примеры упаковки/kombinir-fanernaya-tara-198.jpg"
+                    alt="После упаковки"
+                  />
+                  <span class="slider-badge badge-after">После</span>
+                </div>
+                <div class="slider-img img-before">
+                  <img
+                    src="img/Примеры упаковки/348390727.jfif"
+                    alt="До упаковки"
+                  />
+                  <span class="slider-badge badge-before">До</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="slider-range"
+                  aria-label="Разделитель до и после"
+                />
+                <div class="slider-line">
+                  <div class="slider-button">
+                    <svg
+                      width="16"
+                      height="10"
+                      viewBox="0 0 16 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 5L5 0V10L0 5Z" fill="white"></path>
+                      <path d="M16 5L11 0V10L16 5Z" fill="white"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <p>Индивидуальная упаковка сложных грузов</p>
             </div>
-            <div class="work-card">
-              <img
-                src="img/Примеры упаковки/maxresdefault.jpg"
-                alt="Процесс маркировки и подготовки товаров к отправке на WB"
-              />
+
+            <div class="work-card slider-card">
+              <div class="before-after-slider">
+                <div class="slider-img img-after">
+                  <img
+                    src="img/Примеры упаковки/maxresdefault.jpg"
+                    alt="После маркировки"
+                  />
+                  <span class="slider-badge badge-after">После</span>
+                </div>
+                <div class="slider-img img-before">
+                  <img
+                    src="img/Примеры упаковки/maxresdefault.jpg"
+                    style="filter: grayscale(100%) blur(2px)"
+                    alt="До маркировки"
+                  />
+                  <span class="slider-badge badge-before">До</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="slider-range"
+                  aria-label="Разделитель до и после"
+                />
+                <div class="slider-line">
+                  <div class="slider-button">
+                    <svg
+                      width="16"
+                      height="10"
+                      viewBox="0 0 16 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 5L5 0V10L0 5Z" fill="white"></path>
+                      <path d="M16 5L11 0V10L16 5Z" fill="white"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <p>Маркировка и подготовка к отправке на WB</p>
             </div>
-            <div class="work-card">
-              <img
-                src="img/Примеры упаковки/348390727.jfif"
-                alt="Паллетирование и сборка партий товаров"
-              />
+
+            <div class="work-card slider-card">
+              <div class="before-after-slider">
+                <div class="slider-img img-after">
+                  <img
+                    src="img/Примеры упаковки/348390727.jfif"
+                    alt="После паллетирования"
+                  />
+                  <span class="slider-badge badge-after">После</span>
+                </div>
+                <div class="slider-img img-before">
+                  <img
+                    src="img/Примеры упаковки/kombinir-fanernaya-tara-198.jpg"
+                    alt="До паллетирования"
+                  />
+                  <span class="slider-badge badge-before">До</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="slider-range"
+                  aria-label="Разделитель до и после"
+                />
+                <div class="slider-line">
+                  <div class="slider-button">
+                    <svg
+                      width="16"
+                      height="10"
+                      viewBox="0 0 16 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 5L5 0V10L0 5Z" fill="white"></path>
+                      <path d="M16 5L11 0V10L16 5Z" fill="white"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <p>Паллетирование и подготовка сборных грузов</p>
             </div>
           </div>
@@ -332,10 +434,153 @@
             <h2 class="section-title">Узнайте стоимость за 1 минуту</h2>
             <p class="calc-subtitle">
               Введите ваши параметры и получите предварительный расчет стоимости
-              услуг
+              услуг фулфилмента
             </p>
-            <div class="calc-placeholder">
-              <p>[ Место под интерактивный JS-калькулятор стоимости ]</p>
+
+            <div class="calc-wrapper">
+              <div class="calc-settings">
+                <div class="calc-group">
+                  <label class="calc-label">1. Выберите маркетплейс</label>
+                  <div class="marketplace-options">
+                    <label class="market-option active">
+                      <input
+                        type="radio"
+                        name="marketplace"
+                        value="wb"
+                        checked
+                      />
+                      <span>Wildberries</span>
+                    </label>
+                    <label class="market-option">
+                      <input type="radio" name="marketplace" value="ozon" />
+                      <span>Ozon</span>
+                    </label>
+                    <label class="market-option">
+                      <input type="radio" name="marketplace" value="yandex" />
+                      <span>Яндекс Маркет</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="calc-group">
+                  <div class="calc-group-header">
+                    <label class="calc-label"
+                      >2. Количество товаров в партии</label
+                    >
+                    <span class="calc-counter-val"
+                      ><span id="range-items-val">500</span> шт.</span
+                    >
+                  </div>
+                  <input
+                    type="range"
+                    id="range-items"
+                    min="50"
+                    max="10000"
+                    step="50"
+                    value="500"
+                    class="calc-range"
+                  />
+                </div>
+
+                <div class="calc-group">
+                  <div class="calc-group-header">
+                    <label class="calc-label"
+                      >3. Средний объем единицы товара</label
+                    >
+                    <span class="calc-counter-val"
+                      ><span id="range-volume-val">1.5</span> л.</span
+                    >
+                  </div>
+                  <input
+                    type="range"
+                    id="range-volume"
+                    min="0.1"
+                    max="15"
+                    step="0.1"
+                    value="1.5"
+                    class="calc-range"
+                  />
+                </div>
+
+                <div class="calc-group">
+                  <label class="calc-label">4. Дополнительные услуги</label>
+                  <div class="calc-checkboxes">
+                    <label class="calc-checkbox-item">
+                      <input type="checkbox" id="service-checking" checked />
+                      <span class="checkbox-custom"></span>
+                      <span class="checkbox-text"
+                        >Проверка на брак (визуальный осмотр)</span
+                      >
+                    </label>
+                    <label class="calc-checkbox-item">
+                      <input type="checkbox" id="service-marking" checked />
+                      <span class="checkbox-custom"></span>
+                      <span class="checkbox-text"
+                        >Маркировка (печать и оклейка штрихкодов)</span
+                      >
+                    </label>
+                    <label class="calc-checkbox-item">
+                      <input type="checkbox" id="service-bubble" />
+                      <span class="checkbox-custom"></span>
+                      <span class="checkbox-text"
+                        >Доп. упаковка в воздушно-пузырьковую пленку</span
+                      >
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="calc-result-box">
+                <div class="result-title">Предварительный расчет</div>
+
+                <div class="result-rows">
+                  <div class="result-row">
+                    <span>Базовый тариф (приемка и сборка):</span>
+                    <strong id="res-base">15 000 ₽</strong>
+                  </div>
+                  <div class="result-row">
+                    <span>Дополнительные услуги:</span>
+                    <strong id="res-services">3 500 ₽</strong>
+                  </div>
+                  <div class="result-row discount">
+                    <span>Скидка за объем партии:</span>
+                    <strong id="res-discount">-0 ₽</strong>
+                  </div>
+                  <hr class="calc-hr" />
+                  <div class="result-total-row">
+                    <span>Итого к оплате:</span>
+                    <span class="total-price" id="res-total">18 500 ₽</span>
+                  </div>
+                </div>
+
+                <form
+                  class="calc-lead-form"
+                  onsubmit="
+                    event.preventDefault();
+                    alert('Расчет отправлен менеджеру! Скоро с вами свяжутся.');
+                  "
+                >
+                  <input
+                    type="text"
+                    placeholder="Ваше имя"
+                    required
+                    class="calc-input"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="+7 (999) 000-00-00"
+                    required
+                    class="calc-input"
+                  />
+                  <button type="submit" class="btn-main calc-submit-btn">
+                    Закрепить стоимость
+                  </button>
+                  <p class="calc-form-note">
+                    *Расчет примерный. Точную смету утвердит менеджер после
+                    анализа вашего ТЗ.
+                  </p>
+                </form>
+              </div>
             </div>
           </div>
         </section>
@@ -758,30 +1003,27 @@
       }
 
       function ValidateBusinessEmail() {
-        let email = document.querySelector("#userEmail").value;
+        const email = document.querySelector("#userEmail").value;
+        const privacyCheck = document.querySelector("#privacy-check");
+
         if (!email.includes("@") || !email.includes(".")) {
           alert("Пожалуйста, введите корректный email адрес");
-        } else {
-          alert(
-            "Спасибо! Наш менеджер свяжется с вами и подберет решение для вашего бизнеса.",
-          );
+          return;
         }
+
+        if (!privacyCheck.checked) {
+          alert(
+            "Пожалуйста, ознакомьтесь и согласитесь с политикой конфиденциальности",
+          );
+          return;
+        }
+
+        alert(
+          "Спасибо! Наш менеджер свяжется с вами и подберет решение для вашего бизнеса.",
+        );
       }
 
-      // --- 7. ИНТЕРАКТИВНЫЙ АККОРДЕОН ДЛЯ СЕКЦИИ FAQ ---
-      document.addEventListener("DOMContentLoaded", () => {
-        const faqItems = document.querySelectorAll(".faq-item");
-
-        faqItems.forEach((item) => {
-          const question = item.querySelector(".faq-question");
-
-          question.addEventListener("click", () => {
-            item.classList.toggle("is-active");
-          });
-        });
-      });
-
-      // --- 8. Бургер для мобильной версии сайта ---
+      // --- 7. Бургер для мобильной версии сайта ---
       function toggleMobileMenu() {
         const nav = document.querySelector(".header-nav");
         nav.classList.toggle("open");
@@ -800,6 +1042,177 @@
           document.body.style.overflow = "";
         });
       });
+
+      // --- 8. ФУНКЦИИ ПАРСИНГА РЕАЛЬНЫХ ОТЗЫВОВ (ОБЪЕДИНЕННАЯ И ОЧИЩЕННАЯ) ---
+      async function fetchLiveRatings() {
+        try {
+          const response = await fetch("api-reviews.php");
+          if (!response.ok) throw new Error("Ошибка ответа сервера");
+          const data = await response.json();
+
+          // Обновляем Яндекс
+          if (data.yandex) {
+            document.getElementById("live-ya-rating").innerText =
+              `★ ${data.yandex.rating}`;
+            document.getElementById("live-ya-reviews").innerText =
+              `${data.yandex.reviews} ${getReviewsWord(data.yandex.reviews)}`;
+          }
+
+          // Обновляем Авито с проверкой на прочерки
+          if (data.avito) {
+            if (data.avito.rating === "—" || data.avito.reviews === "—") {
+              document.getElementById("live-avito-rating").innerText = "★ —";
+              document.getElementById("live-avito-reviews").innerText =
+                "нет отзывов";
+            } else {
+              document.getElementById("live-avito-rating").innerText =
+                `★ ${data.avito.rating}`;
+              document.getElementById("live-avito-reviews").innerText =
+                `${data.avito.reviews} ${getReviewsWord(data.avito.reviews)}`;
+            }
+          }
+        } catch (error) {
+          console.error(
+            "Не удалось получить живые отзывы, работают стандартные заглушки из HTML:",
+            error,
+          );
+        }
+      }
+
+      // Умное склонение слова "отзыв"
+      function getReviewsWord(number) {
+        let n = Math.abs(number) % 100;
+        let n1 = n % 10;
+        if (n > 10 && n < 20) return "отзывов";
+        if (n1 > 1 && n1 < 5) return "отзыва";
+        if (n1 === 1) return "отзыв";
+        return "отзывов";
+      }
+
+      // --- 9. ЕДИНЫЙ ИНИЦИАЛИЗАТОР ИВЕНТОВ ПОСЛЕ ЗАГРУЗКИ DOM ---
+      document.addEventListener("DOMContentLoaded", () => {
+        // Инициализация аккордеона FAQ
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+          question.addEventListener("click", () => {
+            item.classList.toggle("is-active");
+          });
+        });
+
+        // Запуск парсинга отзывов
+        fetchLiveRatings();
+      });
+      // --- ЛОГИКА ПЛАВАЮЩЕГО (ДОГОНЯЮЩЕГО) МЕНЮ ---
+      const navMenu = document.querySelector(".header-nav");
+      // Запоминаем начальную точку, где меню стоит в шапке по умолчанию
+      const menuInitialTop = navMenu.offsetTop;
+
+      window.addEventListener("scroll", () => {
+        // Проверяем, на сколько пикселей пользователь прокрутил страницу вниз
+        if (window.scrollY > menuInitialTop + 100) {
+          // Если ушли вниз — включаем режим полета
+          navMenu.classList.add("floating");
+        } else {
+          // Если вернулись в самый верх — сажаем меню обратно на его законное место
+          navMenu.classList.remove("floating");
+        }
+      });
+      // --- ЛОГИКА СЛАЙДЕРОВ ДО / ПОСЛЕ ---
+      const sliders = document.querySelectorAll(".before-after-slider");
+
+      sliders.forEach((slider) => {
+        const range = slider.querySelector(".slider-range");
+        const beforeImg = slider.querySelector(".img-before");
+        const line = slider.querySelector(".slider-line");
+
+        range.addEventListener("input", (e) => {
+          const value = e.target.value;
+
+          // Меняем ширину картинки "ДО"
+          beforeImg.style.width = `${value}%`;
+          // Передвигаем вертикальную разделительную линию
+          line.style.left = `${value}%`;
+        });
+      });
+      // --- ЛОГИКА ИНТЕРАКТИВНОГО КАЛЬКУЛЯТОРА ---
+      const rangeItems = document.getElementById("range-items");
+      const rangeVolume = document.getElementById("range-volume");
+      const serviceChecking = document.getElementById("service-checking");
+      const serviceMarking = document.getElementById("service-marking");
+      const serviceBubble = document.getElementById("service-bubble");
+
+      // Элементы вывода данных
+      const valItems = document.getElementById("range-items-val");
+      const valVolume = document.getElementById("range-volume-val");
+      const resBase = document.getElementById("res-base");
+      const resServices = document.getElementById("res-services");
+      const resDiscount = document.getElementById("res-discount");
+      const resTotal = document.getElementById("res-total");
+
+      // Логика визуального переключения табов маркетплейсов
+      const marketOptions = document.querySelectorAll(".market-option");
+      marketOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          marketOptions.forEach((opt) => opt.classList.remove("active"));
+          this.classList.add("active");
+          calculatePrice();
+        });
+      });
+
+      function calculatePrice() {
+        const count = parseInt(rangeItems.value);
+        const volume = parseFloat(rangeVolume.value);
+
+        // Обновляем циферки рядом с ползунками
+        valItems.innerText = count.toLocaleString("ru-RU");
+        valVolume.innerText = volume.toFixed(1);
+
+        // 1. Считаем базовый тариф (зависит от объема единицы товара)
+        // Допустим, обработка базовой единицы стоит 25 руб + коэффициент от объема
+        let basePerItem = 25 + volume * 2;
+        let baseTotal = count * basePerItem;
+
+        // 2. Считаем доп. услуги (цена за шт * количество)
+        let servicesTotal = 0;
+        if (serviceChecking.checked) servicesTotal += count * 7; // Проверка брака: 7р/шт
+        if (serviceMarking.checked) servicesTotal += count * 5; // Маркировка: 5р/шт
+        if (serviceBubble.checked) servicesTotal += count * 15; // Пупырка: 15р/шт
+
+        // 3. Система скидок за объем (Объемный опт)
+        let discount = 0;
+        if (count >= 1000 && count < 3000) {
+          discount = (baseTotal + servicesTotal) * 0.05; // 5% скидка
+        } else if (count >= 3000 && count < 5000) {
+          discount = (baseTotal + servicesTotal) * 0.1; // 10% скидка
+        } else if (count >= 5000) {
+          discount = (baseTotal + servicesTotal) * 0.15; // 15% скидка
+        }
+
+        // Итоговая сумма
+        let total = baseTotal + servicesTotal - discount;
+
+        // Выводим все красиво на экран форматированным текстом
+        resBase.innerText = `${Math.round(baseTotal).toLocaleString("ru-RU")} ₽`;
+        resServices.innerText = `${Math.round(servicesTotal).toLocaleString("ru-RU")} ₽`;
+        resDiscount.innerText = `-${Math.round(discount).toLocaleString("ru-RU")} ₽`;
+        resTotal.innerText = `${Math.round(total).toLocaleString("ru-RU")} ₽`;
+      }
+
+      // Навешиваем события изменения на все инпуты
+      [
+        rangeItems,
+        rangeVolume,
+        serviceChecking,
+        serviceMarking,
+        serviceBubble,
+      ].forEach((input) => {
+        input.addEventListener("input", calculatePrice);
+        input.addEventListener("change", calculatePrice);
+      });
+
+      // Запускаем первичный расчет при инициализации страницы
+      calculatePrice();
     </script>
   </body>
 </html>

@@ -120,8 +120,8 @@
               class="rating-box yandex-box"
             >
               <span class="box-title">Яндекс</span>
-              <span class="rating">★ 5.0</span>
-              <span class="reviews">968 отзывов</span>
+              <span class="rating" id="live-ya-rating">★ 4.7</span>
+              <span class="reviews" id="live-ya-reviews">15 отзывов</span>
             </a>
             <a
               href="https://www.avito.ru/"
@@ -129,14 +129,14 @@
               class="rating-box avito-box"
             >
               <span class="box-title">Avito</span>
-              <span class="rating">★ 5.0</span>
-              <span class="reviews">139 отзывов</span>
+              <span class="rating" id="live-avito-rating">★ —</span>
+              <span class="reviews" id="live-avito-reviews">— отзывов</span>
             </a>
           </div>
 
           <div class="header-contacts">
             <div class="callback-links">
-              <a href="contact.html">Контакты</a>
+              <a href="about.html">О нас</a>
               <a href="#call-modal" class="callback-trigger">Обратный звонок</a>
             </div>
             <div class="phone-block">
@@ -163,7 +163,7 @@
             <li><a href="./#examples">Примеры работ</a></li>
             <li class="active"><a href="reviews.html">Отзывы</a></li>
             <li><a href="./#faq">Вопросы</a></li>
-            <li><a href="about.html">О нас</a></li>
+            <li><a href="contact.html">Контакты</a></li>
           </ul>
         </nav>
       </header>
@@ -187,10 +187,8 @@
             <div class="review-item-card">
               <div class="review-card-header">
                 <div class="reviewer-info">
-                  <h5>ИП Артемьев Д.А. (Селлер WB)</h5>
-                  <div class="reviewer-meta">
-                    30 мая 2026 • Товарная категория: Одежда
-                  </div>
+                  <h5>Анна Ч.</h5>
+                  <div class="reviewer-meta">14 февраля</div>
                 </div>
                 <span class="review-source-tag source-yandex"
                   >Яндекс.Карты</span
@@ -209,38 +207,37 @@
             <div class="review-item-card">
               <div class="review-card-header">
                 <div class="reviewer-info">
-                  <h5>Константин В.</h5>
-                  <div class="reviewer-meta">
-                    25 мая 2026 • Товарная категория: Электроника
-                  </div>
+                  <h5>Алсу Колганова</h5>
+                  <div class="reviewer-meta">13 февраля</div>
                 </div>
-                <span class="review-source-tag source-avito">Avito</span>
+                <span class="review-source-tag source-yandex"
+                  >Яндекс.Карты</span
+                >
               </div>
               <div class="review-stars">★★★★★</div>
               <p class="review-text">
-                Работаем по FBS и FBO на Озоне. Очень выручает их ежедневная
-                доставка. Маркируют чётко по ТЗ, честный знак клеят без косяков
-                (прошлый фулфилмент на этом нас подставил под штрафы). Цены
-                адекватные, склад чистый и сухой. Рекомендую.
+                Все сделали оперативно, чётко по ТЗ и лучше, чем я ожидала!) Это
+                именно тот фулфилмент, о котором я мечтала! Успехов вам ребята!
               </p>
             </div>
 
             <div class="review-item-card">
               <div class="review-card-header">
                 <div class="reviewer-info">
-                  <h5>Ольга (Бренд Kozha)</h5>
-                  <div class="reviewer-meta">
-                    18 мая 2026 • Товарная категория: Сумки и аксессуары
-                  </div>
+                  <h5>Валерия Родионова</h5>
+                  <div class="reviewer-meta">2 февраля</div>
                 </div>
-                <span class="review-source-tag source-site">Через сайт</span>
+                <span class="review-source-tag source-yandex"
+                  >Яндекс.Карты</span
+                >
               </div>
               <div class="review-stars">★★★★★</div>
               <p class="review-text">
-                Прекрасный ответственный сервис. Товар дорогой, переживала за
-                сохранность и чистоту при упаковке. Прислали видеоотчёт процесса
-                сборки по первой просьбе. Всё завернули в пупырку идеально.
-                Спасибо за спокойствие за свой бизнес!
+                После нескольких неудачных фулфилментов здесь я наконец-то
+                вздохнула спокойно 🙏 Всё делают вовремя, бережно упаковывают и
+                всегда на связи!) Цены адекватные, за такое качество услуг, это
+                идеальное соотношение. Человечный подход, очень вежливые и
+                отзывчивые сотрудники ☺️ Спасибо, что вернули веру в логистику!)
               </p>
             </div>
           </div>
@@ -293,6 +290,72 @@
           "Здесь будет открываться форма/модалка 'Оставить отзыв' со звездочками и отправкой модератору на бэкенд!",
         );
       }
+
+      // Функция получения живого рейтинга
+      async function fetchLiveRatings() {
+        try {
+          const response = await fetch("api-reviews.php");
+          if (!response.ok) throw new Error("Ошибка ответа сервера");
+          const data = await response.json();
+
+          // Обновляем Яндекс
+          if (data.yandex) {
+            document.getElementById("live-ya-rating").innerText =
+              `★ ${data.yandex.rating}`;
+            document.getElementById("live-ya-reviews").innerText =
+              `${data.yandex.reviews} ${getReviewsWord(data.yandex.reviews)}`;
+          }
+
+          // Обновляем Авито
+          if (data.avito) {
+            if (data.avito.rating === "—" || data.avito.reviews === "—") {
+              document.getElementById("live-avito-rating").innerText = "★ —";
+              document.getElementById("live-avito-reviews").innerText =
+                "нет отзывов";
+            } else {
+              document.getElementById("live-avito-rating").innerText =
+                `★ ${data.avito.rating}`;
+              document.getElementById("live-avito-reviews").innerText =
+                `${data.avito.reviews} ${getReviewsWord(data.avito.reviews)}`;
+            }
+          }
+        } catch (error) {
+          console.error(
+            "Не удалось получить живые отзывы, работают стандартные заглушки:",
+            error,
+          );
+        }
+      }
+
+      // Умное склонение слова "отзыв"
+      function getReviewsWord(number) {
+        let n = Math.abs(number) % 100;
+        let n1 = n % 10;
+        if (n > 10 && n < 20) return "отзывов";
+        if (n1 > 1 && n1 < 5) return "отзыва";
+        if (n1 === 1) return "отзыв";
+        return "отзывов";
+      }
+
+      // Запускаем парсинг сразу после загрузки страницы
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchLiveRatings();
+      });
+      // --- ЛОГИКА ПЛАВАЮЩЕГО (ДОГОНЯЮЩЕГО) МЕНЮ ---
+      const navMenu = document.querySelector('.header-nav');
+      // Запоминаем начальную точку, где меню стоит в шапке по умолчанию
+      const menuInitialTop = navMenu.offsetTop;
+
+      window.addEventListener('scroll', () => {
+        // Проверяем, на сколько пикселей пользователь прокрутил страницу вниз
+        if (window.scrollY > menuInitialTop + 100) {
+          // Если ушли вниз — включаем режим полета
+          navMenu.classList.add('floating');
+        } else {
+          // Если вернулись в самый верх — сажаем меню обратно на его законное место
+          navMenu.classList.remove('floating');
+        }
+      });
     </script>
   </body>
 </html>

@@ -69,6 +69,12 @@ video {
 /* ==========================================================================
    2. ШАПКА САЙТА (HEADER)
    ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Отступ при клике на якоря, чтобы меню не перекрывало заголовки */
+}
+
 .header-top {
   display: flex;
   justify-content: space-between;
@@ -138,10 +144,40 @@ video {
   display: none;
 }
 
+/* Новые стили для плавающего меню */
 .header-nav {
+  position: relative; /* В обычном состоянии меню стоит на своем месте */
+  top: 0;
+  z-index: 999;
+  background-color: #ffffff;
   border-top: 1px solid #f0f2f5;
   border-bottom: 1px solid #f0f2f5;
-  padding: 15px 0;
+  width: 100%;
+
+  /* Добавляем мягкую анимацию для свойства top, чтобы меню плавно "каталось", а не дергалось */
+  transition:
+    top 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s ease;
+}
+
+.header-nav.floating {
+  position: fixed; /* Меню отрывается от страницы и начинает кататься */
+  top: 20px; /* Делаем аккуратный отступ от верхнего края экрана, как на твоем наброске */
+  left: 0;
+  right: 0;
+  max-width: 1200px; /* Ограничиваем его по ширине твоего основного контейнера */
+  margin: 0 auto; /* Центрируем по экрану */
+  border-radius: 12px; /* Красиво скругляем углы плашки, пока она летает */
+  border: 1px solid #eef0f3;
+  box-shadow: 0 10px 30px rgba(123, 97, 255, 0.1); /* Легкая фиолетовая тень в цвет твоего бренда */
+}
+
+/* Контейнер внутри меню для центрирования элементов */
+.header-nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
 }
 
 .header-nav ul {
@@ -210,12 +246,32 @@ video {
 
 .hero-stats {
   display: flex;
-  gap: 40px;
+  flex-direction: column; /* Выстраиваем фразы строго друг под другом в столбик */
+  gap: 12px; /* Аккуратный отступ между строчками */
   margin-bottom: 40px;
-  border-left: 3px solid #7b61ff;
+  border-left: 3px solid #7b61ff; /* Твоя крутая фиолетовая линия */
   padding-left: 20px;
 }
 
+.stat-item-phrase {
+  font-size: 18px;
+  font-weight: 600; /* Делаем текст выразительным */
+  color: #1a1a1a; /* Цвет под твой основной дизайн */
+  line-height: 1.3;
+}
+
+/* Адаптив для мобилок: немного уменьшаем шрифт, чтобы на экранах смартфонов всё смотрелось компактно */
+@media screen and (max-width: 576px) {
+  .hero-stats {
+    gap: 10px;
+    margin-bottom: 30px;
+    padding-left: 15px; /* Чуть уменьшаем отступ от линии на мобилках */
+  }
+
+  .stat-item-phrase {
+    font-size: 16px;
+  }
+}
 .stat-item {
   display: flex;
   flex-direction: column;
@@ -953,7 +1009,7 @@ footer hr {
   background: #fcfdfe;
   font-size: 12px;
   cursor: pointer;
-  box-shadow: 0 2px 10px black;
+  box-shadow: 0 1px 4px black;
   text-decoration: none;
   color: inherit;
   will-change: transform, box-shadow;
@@ -1060,6 +1116,11 @@ footer hr {
     border: none;
     padding: 0;
     position: static;
+  }
+
+  .header-nav-container {
+    justify-content: flex-end; /* Сдвигаем бургер вправо */
+    padding: 10px 20px;
   }
 
   .header-nav ul {
@@ -1234,4 +1295,399 @@ footer hr {
 }
 .about-story-block {
   padding: 20px;
+}
+
+/* ==========================================================================
+   СЛАЙДЕРЫ ДО / ПОСЛЕ (BEFORE-AFTER SLIDER)
+   ========================================================================== */
+.slider-card {
+  padding: 0 !important; /* Убираем внутренние отступы карточки, если они были */
+  overflow: hidden;
+}
+
+.before-after-slider {
+  position: relative;
+  width: 100%;
+  height: 280px; /* Высота карточки с примером */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.slider-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Чтобы картинки не искажались */
+  pointer-events: none;
+}
+
+/* Слой "ДО" перекрывает слой "ПОСЛЕ" и обрезается */
+.img-before {
+  width: 50%; /* Стартовое положение ползунка — ровно половина */
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Стили плашек "До" и "После" */
+.slider-badge {
+  position: absolute;
+  top: 15px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  color: #fff;
+  z-index: 3;
+  pointer-events: none;
+}
+.badge-before {
+  left: 15px;
+  background: rgba(235, 87, 87, 0.85); /* Красная плашка для ДО */
+}
+.badge-after {
+  right: 15px;
+  background: rgba(46, 204, 113, 0.85); /* Зеленая плашка для ПОСЛЕ */
+}
+
+/* Линия разделителя */
+.slider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background-color: #ffffff;
+  z-index: 3;
+  pointer-events: none; /* Пропускает клики сквозь себя */
+}
+
+/* Круглая кнопка со стрелками по центру линии */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background-color: #7b61ff; /* Твой фирменный фиолетовый цвет */
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Скрытый нативный ползунок поверх всей карточки для управления */
+.slider-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Делаем его полностью невидимым */
+  cursor: ew-resize; /* Меняем курсор на стрелочки влево-вправо */
+  z-index: 4;
+}
+
+/* Текст под слайдером */
+.work-card p {
+  padding: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* ==========================================================================
+   ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР СТОИМОСТИ
+   ========================================================================== */
+.calc-wrapper {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.calc-settings {
+  flex: 1.3;
+  background: #ffffff;
+  border: 1px solid #eef0f3;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.calc-result-box {
+  flex: 0.9;
+  background: #f9faff;
+  border: 1px solid #eef0f3;
+  border-radius: 16px;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: max-content;
+  position: sticky;
+  top: 100px; /* Чтобы правый блок следовал за экраном при длинном контенте */
+}
+
+.calc-group {
+  margin-bottom: 30px;
+}
+.calc-group:last-child {
+  margin-bottom: 0;
+}
+
+.calc-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.calc-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calc-counter-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: #7b61ff;
+  background: #f3f0ff;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* Переключатели Маркетплейсов */
+.marketplace-options {
+  display: flex;
+  gap: 15px;
+}
+
+.market-option {
+  flex: 1;
+  border: 2px solid #eef0f3;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #616571;
+}
+
+.market-option input {
+  display: none; /* Скрываем стандартную радио-точку */
+}
+
+.market-option:hover {
+  border-color: #bfaeff;
+}
+
+.market-option.active {
+  border-color: #7b61ff;
+  background-color: #f3f0ff;
+  color: #7b61ff;
+}
+
+/* Кастомизация ползунков (Range) */
+.calc-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #eef0f3;
+  border-radius: 5px;
+  outline: none;
+}
+
+.calc-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #7b61ff;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  box-shadow: 0 2px 6px rgba(123, 97, 255, 0.4);
+}
+
+.calc-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Чекбоксы доп. услуг */
+.calc-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.calc-checkbox-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333ba3;
+  color: #333333;
+}
+
+.calc-checkbox-item input {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #eef0f3;
+  border-radius: 6px;
+  margin-right: 12px;
+  display: inline-block;
+  position: relative;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.calc-checkbox-item input:checked + .checkbox-custom {
+  background-color: #7b61ff;
+  border-color: #7b61ff;
+}
+
+.calc-checkbox-item input:checked + .checkbox-custom::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Стилизация вывода результатов */
+.result-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eef0f3;
+  padding-bottom: 10px;
+}
+
+.result-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #616571;
+}
+
+.result-row strong {
+  color: #1a1a1a;
+}
+
+.result-row.discount strong {
+  color: #2ecc71; /* Зеленый цвет для отображения скидки */
+}
+
+.calc-hr {
+  border: 0;
+  border-top: 1px dashed #eef0f3;
+  margin: 15px 0;
+}
+
+.result-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.result-total-row span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.total-price {
+  font-size: 28px;
+  font-weight: 900;
+  color: #7b61ff;
+}
+
+/* Форма сбора лидов */
+.calc-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.calc-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #eef0f3;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.calc-input:focus {
+  border-color: #7b61ff;
+}
+
+.calc-submit-btn {
+  width: 100%;
+  padding: 15px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
+
+.calc-form-note {
+  font-size: 11px;
+  color: #828693;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+
+/* Адаптивность для мобилок */
+@media screen and (max-width: 992px) {
+  .calc-wrapper {
+    flex-direction: column;
+  }
+  .calc-result-box {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .marketplace-options {
+    flex-direction: column;
+    gap: 8px;
+  }
 }

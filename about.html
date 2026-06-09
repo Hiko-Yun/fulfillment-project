@@ -135,8 +135,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="container">
-        <div class="header-top">
+      <header>
+        <div class="header-top container">
           <a href="./" class="logo">
             <img src="img/logo.png" alt="Мурмурация — фулфилмент под ключ" />
           </a>
@@ -148,23 +148,24 @@
               class="rating-box yandex-box"
             >
               <span class="box-title">Яндекс</span>
-              <span class="rating">★ 5.0</span>
-              <span class="reviews">968 отзывов</span>
+              <span class="rating" id="live-ya-rating">★ 4.7</span>
+              <span class="reviews" id="live-ya-reviews">15 отзывов</span>
             </a>
+
             <a
               href="https://www.avito.ru/"
               target="_blank"
               class="rating-box avito-box"
             >
               <span class="box-title">Avito</span>
-              <span class="rating">★ 5.0</span>
-              <span class="reviews">139 отзывов</span>
+              <span class="rating" id="live-avito-rating">★ —</span>
+              <span class="reviews" id="live-avito-reviews">— отзывов</span>
             </a>
           </div>
 
           <div class="header-contacts">
             <div class="callback-links">
-              <a href="contact.html">Контакты</a>
+              <a href="about.html">О нас</a>
               <a href="#call-modal" class="callback-trigger">Обратный звонок</a>
             </div>
             <div class="phone-block">
@@ -191,7 +192,7 @@
             <li><a href="./#examples">Примеры работ</a></li>
             <li><a href="reviews.html">Отзывы</a></li>
             <li><a href="./#faq">Вопросы</a></li>
-            <li class="active"><a href="about.html">О нас</a></li>
+            <li><a href="contact.html">Контакты</a></li>
           </ul>
         </nav>
       </header>
@@ -339,5 +340,22 @@
         </p>
       </footer>
     </div>
+    <script>
+      // --- ЛОГИКА ПЛАВАЮЩЕГО (ДОГОНЯЮЩЕГО) МЕНЮ ---
+      const navMenu = document.querySelector(".header-nav");
+      // Запоминаем начальную точку, где меню стоит в шапке по умолчанию
+      const menuInitialTop = navMenu.offsetTop;
+
+      window.addEventListener("scroll", () => {
+        // Проверяем, на сколько пикселей пользователь прокрутил страницу вниз
+        if (window.scrollY > menuInitialTop + 100) {
+          // Если ушли вниз — включаем режим полета
+          navMenu.classList.add("floating");
+        } else {
+          // Если вернулись в самый верх — сажаем меню обратно на его законное место
+          navMenu.classList.remove("floating");
+        }
+      });
+    </script>
   </body>
 </html>

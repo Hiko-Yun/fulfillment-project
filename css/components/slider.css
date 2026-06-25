@@ -1,0 +1,152 @@
+/* ==========================================================================
+   СЛАЙДЕРЫ ДО / ПОСЛЕ (BEFORE-AFTER SLIDER)
+   ========================================================================== */
+/* 1. Жестко фиксируем контейнеры слайдера */
+.before-after-slider {
+  position: relative;
+  width: 100%;
+  height: 280px; /* Убедись, что высота зафиксирована */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* 2. Обеспечиваем наложение друг на друга */
+.slider-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-before {
+  z-index: 2;
+  width: 50%; /* Стартовое положение */
+  overflow: hidden;
+  /* Важно: не даем содержимому "плыть" */
+}
+
+/* 3. Самое главное: жестко фиксируем картинку внутри */
+.slider-img img {
+  width: 100%; /* Занимает 100% от слайдера (280px) */
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* Центрируем, чтобы не дергалось */
+  position: absolute; /* Отрываем от потока, чтобы не растягивала контейнер */
+  top: 0;
+  left: 0;
+  display: block;
+  /* Если картинки "съезжают", добавь это: */
+  max-width: none;
+}
+/* Основной контейнер */
+.before-after-slider {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background-color: #eee;
+}
+
+/* Слой картинки */
+.slider-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Это самое важное: картинка не должна менять размер */
+  overflow: hidden;
+}
+
+/* Картинка внутри слоя */
+.slider-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* Центрируем, чтобы не прыгало */
+  display: block;
+}
+
+/* Слой ДО (обрезается) */
+.img-before {
+  z-index: 2;
+  width: 50%; /* JS управляет этим */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* Слой ПОСЛЕ (всегда виден) */
+.img-after {
+  z-index: 1;
+  width: 100%;
+}
+
+/* Линия-разделитель */
+.slider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%; /* JS управляет этим */
+  width: 3px;
+  background-color: #fff;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Кнопка */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background-color: #7b61ff;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 11;
+}
+
+/* Ползунок */
+.slider-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 20;
+  margin: 0;
+}
+
+/* Плашки (фиксируем, чтобы не прыгали) */
+.slider-badge {
+  position: absolute;
+  top: 15px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  color: #fff;
+  z-index: 5;
+}
+.badge-before {
+  left: 15px;
+  background: rgba(235, 87, 87, 0.85);
+}
+.badge-after {
+  right: 15px;
+  background: rgba(46, 204, 113, 0.85);
+}

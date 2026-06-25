@@ -1,0 +1,133 @@
+/* ==========================================================================
+   2. ШАПКА САЙТА (HEADER)
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Отступ при клике на якоря, чтобы меню не перекрывало заголовки */
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0 20px 0;
+}
+
+.logo img {
+  max-height: 45px;
+}
+
+.header-contacts {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.callback-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.callback-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: #828693;
+}
+
+.callback-links .callback-trigger {
+  color: #7b61ff;
+  font-weight: 600;
+  border-bottom: 1px dashed #7b61ff;
+}
+
+.callback-links .callback-trigger:hover {
+  color: #5a3edb;
+  border-color: transparent;
+}
+
+.phone-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.phone-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Бургер по умолчанию скрыт на ПК */
+.burger-menu-btn {
+  display: none;
+}
+
+/* Новые стили для плавающего меню */
+.header-nav {
+  position: relative; /* В обычном состоянии меню стоит на своем месте */
+  top: 0;
+  z-index: 999;
+  background-color: #ffffff;
+  border-top: 1px solid #f0f2f5;
+  border-bottom: 1px solid #f0f2f5;
+  width: 100%;
+
+  /* Добавляем мягкую анимацию для свойства top, чтобы меню плавно "каталось", а не дергалось */
+  transition:
+    top 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s ease;
+}
+
+.header-nav.floating {
+  position: fixed; /* Меню отрывается от страницы и начинает кататься */
+  top: 20px; /* Делаем аккуратный отступ от верхнего края экрана, как на твоем наброске */
+  left: 0;
+  right: 0;
+  max-width: 1200px; /* Ограничиваем его по ширине твоего основного контейнера */
+  margin: 0 auto; /* Центрируем по экрану */
+  border-radius: 12px; /* Красиво скругляем углы плашки, пока она летает */
+  border: 1px solid #eef0f3;
+  box-shadow: 0 10px 30px rgba(123, 97, 255, 0.1); /* Легкая фиолетовая тень в цвет твоего бренда */
+}
+
+/* Контейнер внутри меню для центрирования элементов */
+.header-nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.header-nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 40px;
+}
+
+.header-nav ul li a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #616571;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header-nav ul li a:hover,
+.header-nav ul li.active a {
+  color: #7b61ff;
+}

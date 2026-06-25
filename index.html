@@ -3,18 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light only">
     <title>
       Мурмурация — Фулфилмент и ответственное хранение для маркетплейсов
     </title>
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="icon" type="image/png" href="img/ICO.png" />
+    <link rel="stylesheet" href="css/components/calculator-FAQ.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/slider.css" />
+    <link rel="stylesheet" href="css/don't-touch/bugabuga.css" />
+    <link rel="icon" type="image/png" href="img/company-logos/ICO.png" />
   </head>
   <body>
     <div class="wrapper">
       <header>
         <div class="header-top container">
           <a href="./" class="logo">
-            <img src="img/logo.png" alt="Мурмурация — фулфилмент под ключ" />
+            <img
+              src="img/company-logos/logo.png"
+              alt="Мурмурация — фулфилмент под ключ"
+            />
           </a>
 
           <div class="rating-widgets">
@@ -29,13 +37,13 @@
             </a>
 
             <a
-              href="https://www.avito.ru/"
+              href="https://www.avito.ru/brands/3095c1716e81c2f594d4e2ca49f57278"
               target="_blank"
               class="rating-box avito-box"
             >
               <span class="box-title">Avito</span>
-              <span class="rating" id="live-avito-rating">★ —</span>
-              <span class="reviews" id="live-avito-reviews">— отзывов</span>
+              <span class="rating" id="live-avito-rating">★ 5</span>
+              <span class="reviews" id="live-avito-reviews">21 отзыв</span>
             </a>
           </div>
 
@@ -50,10 +58,16 @@
               >
               <div class="social-icons">
                 <a href="#" target="_blank" rel="noopener">
-                  <img src="img/Telegram.png" alt="Написать нам в Telegram" />
+                  <img
+                    src="img/social-media/Telegram.png"
+                    alt="Написать нам в Telegram"
+                  />
                 </a>
                 <a href="#" target="_blank" rel="noopener">
-                  <img src="img/MAX-512x512.png" alt="Написать нам в Макс" />
+                  <img
+                    src="img/social-media/MAX.png"
+                    alt="Написать нам в Макс"
+                  />
                 </a>
               </div>
             </div>
@@ -102,9 +116,9 @@
               </p>
 
               <div class="hero-stats">
-                <div class="stat-item-phrase">До 30 000 единиц в день</div>
-                <div class="stat-item-phrase">Точность 99,8%</div>
-                <div class="stat-item-phrase">Полный цикл</div>
+                <div class="stat-item-phrase">· До 30 000 единиц в день</div>
+                <div class="stat-item-phrase">· Точность 99,8%</div>
+                <div class="stat-item-phrase">· Полный цикл</div>
               </div>
 
               <button class="btn-main" onclick="ScrollToCalc()">
@@ -129,7 +143,7 @@
                     />
                   </video>
 
-                  <div class="map-point" style="top: 30%; left: 35%">
+                  <div class="map-point" style="top: 70%; left: 25%">
                     <button
                       class="point-trigger"
                       onclick="openArtModal('modal-gate', event)"
@@ -137,18 +151,11 @@
                       +
                     </button>
                   </div>
+
                   <div class="map-point" style="top: 50%; left: 65%">
                     <button
                       class="point-trigger"
                       onclick="openArtModal('modal-park', event)"
-                    >
-                      +
-                    </button>
-                  </div>
-                  <div class="map-point" style="top: 75%; left: 45%">
-                    <button
-                      class="point-trigger"
-                      onclick="openArtModal('modal-storage', event)"
                     >
                       +
                     </button>
@@ -159,102 +166,70 @@
           </div>
         </section>
 
+        <!-- Карусель -->
+        <!-- TODO Сюды надо добавить ссылки на партеров -->
         <div class="partners-carousel container">
           <div class="logos-track">
             <div class="logos-group">
-              <a
-                href="https://www.wildberries.ru/"
-                target="_blank"
-                rel="noopener"
-                ><img src="img/wildberries-sign-logo.png" alt="WB"
-              /></a>
-              <a href="https://www.ozon.ru/" target="_blank" rel="noopener"
-                ><img src="img/icons8-озон-48.png" alt="Ozon"
-              /></a>
-              <a href="https://market.yandex.ru/" target="_blank" rel="noopener"
-                ><img src="img/yandex-market-sign-logo.png" alt="Яндекс"
-              /></a>
-              <a href="https://www.avito.ru/" target="_blank" rel="noopener"
-                ><img src="img/avito-logo.png" alt="Avito"
-              /></a>
-              <a
-                href="https://www.wildberries.ru/"
-                target="_blank"
-                rel="noopener"
-                ><img src="img/wildberries-sign-logo.png" alt="WB"
-              /></a>
-              <a href="https://www.ozon.ru/" target="_blank" rel="noopener"
-                ><img src="img/icons8-озон-48.png" alt="Ozon"
-              /></a>
-              <a href="https://market.yandex.ru/" target="_blank" rel="noopener"
-                ><img src="img/yandex-market-sign-logo.png" alt="Яндекс"
-              /></a>
-              <a href="https://www.avito.ru/" target="_blank" rel="noopener"
-                ><img src="img/avito-logo.png" alt="Avito"
-              /></a>
+              <img src="img/partner-logos/LOXLEY.png" alt="LOXLEY" />
+              <img src="img/partner-logos/Luckyboo.png" alt="Luckyboo" />
+              <img src="img/partner-logos/Only vert.png" alt="Only vert" />
+              <img src="img/partner-logos/Ping&up.png" alt="Ping&up" />
+              <img src="img/partner-logos/Prime g.png" alt="Prime g" />
+              <img src="img/partner-logos/Prime.png" alt="Prime" />
+              <img src="img/partner-logos/Shoker.png" alt="Shoker" />
+              <img src="img/partner-logos/SKIFREE.png" alt="SKIFREE" />
+              <img src="img/partner-logos/Terro-black-g.png" alt="" />
+              <img src="img/partner-logos/Terro-black.png" alt="" />
+              <img src="img/partner-logos/Terro-white-g.png" alt="" />
+              <img src="img/partner-logos/Terro-white.png" alt="" />
             </div>
 
             <div class="logos-group" aria-hidden="true">
-              <a
-                href="https://www.wildberries.ru/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-                ><img src="img/wildberries-sign-logo.png" alt="WB"
-              /></a>
-              <a
-                href="https://www.ozon.ru/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-                ><img src="img/icons8-озон-48.png" alt="Ozon"
-              /></a>
-              <a
-                href="https://market.yandex.ru/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-                ><img src="img/yandex-market-sign-logo.png" alt="Яндекс"
-              /></a>
-              <a
-                href="https://www.avito.ru/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-                ><img src="img/avito-logo.png" alt="Avito"
-              /></a>
-              <a
-                href="https://www.wildberries.ru/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-                ><img src="img/wildberries-sign-logo.png" alt="WB"
-              /></a>
-              <a
-                href="https://www.ozon.ru/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-                ><img src="img/icons8-озон-48.png" alt="Ozon"
-              /></a>
-              <a
-                href="https://market.yandex.ru/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-                ><img src="img/yandex-market-sign-logo.png" alt="Яндекс"
-              /></a>
-              <a
-                href="https://www.avito.ru/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-                ><img src="img/avito-logo.png" alt="Avito"
-              /></a>
+              <img src="img/partner-logos/LOXLEY.png" alt="LOXLEY" />
+              <img src="img/partner-logos/Luckyboo.png" alt="Luckyboo" />
+              <img src="img/partner-logos/Only vert.png" alt="Only vert" />
+              <img src="img/partner-logos/Ping&up.png" alt="Ping&up" />
+              <img src="img/partner-logos/Prime g.png" alt="Prime g" />
+              <img src="img/partner-logos/Prime.png" alt="Prime" />
+              <img src="img/partner-logos/Shoker.png" alt="Shoker" />
+              <img src="img/partner-logos/SKIFREE.png" alt="SKIFREE" />
+              <img src="img/partner-logos/Terro-black-g.png" alt=" g" />
+              <img src="img/partner-logos/Terro-black.png" alt="" />
+              <img src="img/partner-logos/Terro-white g.png" alt="" />
+              <img src="img/partner-logos/Terro-white.png" alt="" />
             </div>
           </div>
         </div>
+        <!-- TODO Поправить эту залупу и переписать по человеческий -->
+        <section class="trust-section">
+          <div class="container trust-grid">
+            <div class="trust-content">
+              <h2 class="trust-title">
+                Почему селлеры <span class="highlight">теряют деньги</span>
+              </h2>
+              <ul class="trust-features">
+                <li>Ошибки в упаковке → штрафы от маркетплейсов</li>
+                <li>Брак доходит до клиента → падение рейтинга</li>
+                <li>Медленная отгрузка → просадка продаж</li>
+                <li>Потеря остатков и хаос на складе</li>
+              </ul>
+              <button class="btn-primary-custom open-modal-btn">
+                Разместить товары на складе
+              </button>
+            </div>
 
+            <div class="process-flow">
+              <div class="step">Приёмка товара</div>
+              <div class="step">Проверка качества</div>
+              <div class="step">Упаковка и маркировка</div>
+              <div class="step">Хранение</div>
+              <div class="step">Сборка заказов</div>
+              <div class="step">Отгрузка по FBO / FBS</div>
+              <div class="step">Работа с возвратами</div>
+            </div>
+          </div>
+        </section>
         <section id="examples" class="container section-padding">
           <h2 class="section-title">Примеры работ на упаковку</h2>
 
@@ -263,14 +238,14 @@
               <div class="before-after-slider">
                 <div class="slider-img img-after">
                   <img
-                    src="img/Примеры упаковки/kombinir-fanernaya-tara-198.jpg"
+                    src="img/packaging-examples/Whole-box.jpg"
                     alt="После упаковки"
                   />
                   <span class="slider-badge badge-after">После</span>
                 </div>
                 <div class="slider-img img-before">
                   <img
-                    src="img/Примеры упаковки/348390727.jfif"
+                    src="img/packaging-examples/mess.jpg"
                     alt="До упаковки"
                   />
                   <span class="slider-badge badge-before">До</span>
@@ -305,14 +280,14 @@
               <div class="before-after-slider">
                 <div class="slider-img img-after">
                   <img
-                    src="img/Примеры упаковки/maxresdefault.jpg"
+                    src="img/packaging-examples/maxresdefault.jpg"
                     alt="После маркировки"
                   />
                   <span class="slider-badge badge-after">После</span>
                 </div>
                 <div class="slider-img img-before">
                   <img
-                    src="img/Примеры упаковки/maxresdefault.jpg"
+                    src="img/packaging-examples/maxresdefault.jpg"
                     style="filter: grayscale(100%) blur(2px)"
                     alt="До маркировки"
                   />
@@ -348,14 +323,14 @@
               <div class="before-after-slider">
                 <div class="slider-img img-after">
                   <img
-                    src="img/Примеры упаковки/348390727.jfif"
+                    src="img/packaging-examples/348390727.jfif"
                     alt="После паллетирования"
                   />
                   <span class="slider-badge badge-after">После</span>
                 </div>
                 <div class="slider-img img-before">
                   <img
-                    src="img/Примеры упаковки/kombinir-fanernaya-tara-198.jpg"
+                    src="img/packaging-examples/kombinir-fanernaya-tara-198.jpg"
                     alt="До паллетирования"
                   />
                   <span class="slider-badge badge-before">До</span>
@@ -388,47 +363,191 @@
           </div>
         </section>
 
-        <section id="price" class="container section-padding">
-          <h2 class="section-title">Дополнительные услуги под ваши задачи</h2>
-          <div class="grid-3-columns">
-            <div class="service-card">
-              <img
-                src="img/Доп услуги/editor-236750-scaled.png"
-                alt="Сортировка и приёмка товаров на складе"
-                class="service-icon"
-              />
-              <h4>Приёмка и сортировка</h4>
-              <p>
-                Тщательно пересчитаем каждую единицу товара, проверим на брак по
-                ТЗ.
-              </p>
+        <!-- TODO потом глянуть че это за залупа и если что поправить -->
+        <section class="services" id="services">
+          <div class="container">
+            <h2 class="text-center mb-5">
+              Дополнительные услуги
+              <span class="gradient-text">под ваши задачи</span>
+            </h2>
+
+            <div class="service-item">
+              <div class="service-content">
+                <h3 class="service-title">Контроль качества по вашему ТЗ</h3>
+                <p class="text-secondary">
+                  Проверяем товар на всех этапах — от базового осмотра до
+                  сложной технической проверки. Под задачи клиентов выделяем
+                  отдельные зоны.
+                </p>
+                <p class="text-secondary">
+                  Одежда — удаляем лишние нитки и переустанавливаем бирки.<br />Обувь
+                  — проверяем размер и парность.
+                </p>
+                <p class="text-secondary mb-3">
+                  <strong>До 15 000 единиц в день</strong>
+                </p>
+              </div>
+              <div class="service-image">
+                <span class="service-number">1</span>
+                <img
+                  src="img/additional-services/1.jpg"
+                  alt="Контроль качества"
+                />
+              </div>
             </div>
-            <div class="service-card">
-              <img
-                src="img/Доп услуги/i.webp"
-                alt="Ответственное хранение грузов маркетплейсов"
-                class="service-icon"
-              />
-              <h4>Хранение грузов</h4>
-              <p>
-                Ответственное хранение на сухом, охраняемом складе класса А.
-              </p>
+
+            <div class="service-item">
+              <div class="service-content">
+                <h3 class="service-title">
+                  Упаковка под требования маркетплейсов
+                </h3>
+                <p class="text-secondary">
+                  Подбираем упаковку под ваш товар: ВПП, ПОФ, ПВД и фирменные
+                  пакеты. Термоусадка — на профессиональном оборудовании.
+                </p>
+                <p class="text-secondary mb-3">
+                  <strong>До 30 000 единиц в сутки без потери качества</strong>
+                </p>
+              </div>
+              <div class="service-image">
+                <span class="service-number">2</span>
+                <img
+                  src="img/additional-services/2.png"
+                  alt="Упаковка товаров"
+                />
+              </div>
             </div>
-            <div class="service-card">
-              <img
-                src="img/Доп услуги/maxresdefault.jpg"
-                alt="Доставка коробов и паллет на склады маркетплейсов"
-                class="service-icon"
-              />
-              <h4>Доставка на маркетплейсы</h4>
-              <p>
-                Собственная логистика, ежедневные отгрузки на любые склады
-                маркетплейсов.
-              </p>
+
+            <div class="service-item">
+              <div class="service-content">
+                <h3 class="service-title">Работа с КИЗами без риска штрафов</h3>
+                <p class="text-secondary">
+                  Полный контроль КИЗов на каждом этапе: печатаем, проверяем
+                  читаемость и отслеживаем движение.
+                </p>
+                <p class="text-secondary mb-3">
+                  <strong
+                    >В нашей WMS вы всегда видите: что отгружено, а что осталось
+                    на складе.</strong
+                  ><br />Дополнительно проверяем ввод кодов в оборот.
+                </p>
+              </div>
+              <div class="service-image">
+                <span class="service-number">3</span>
+                <img
+                  src="img/additional-services/3.png"
+                  alt="Работа с КИЗами"
+                />
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="service-content">
+                <h3 class="service-title">FBO и FBS — в одном месте</h3>
+                <p class="text-secondary">
+                  Работаем с обеими схемами без пересечений процессов. Для
+                  каждой — отдельные зоны, контроль и видеосъёмка.
+                </p>
+                <p class="text-secondary mb-3">
+                  <strong>Вам не нужен второй склад.</strong> Весь товар
+                  хранится и обрабатывается у нас.
+                </p>
+              </div>
+              <div class="service-image">
+                <span class="service-number">4</span>
+                <img src="img/additional-services/4.jpg" alt="FBO и FBS" />
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="service-content">
+                <h3 class="service-title">Комплекты и вложения</h3>
+                <p class="text-secondary">
+                  Собираем комплекты любой сложности: из одинаковых или разных
+                  товаров. Добавляем вложения: буклеты, инструкции, подарки от
+                  вашего бренда.
+                </p>
+              </div>
+              <div class="service-image">
+                <span class="service-number">5</span>
+                <img
+                  src="img/additional-services/5.jpg"
+                  alt="Комплекты с вложениями"
+                />
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="service-content">
+                <h3 class="service-title">Выгодное хранение</h3>
+                <p class="text-secondary">
+                  Специальные тарифы для длительного хранения. Подходит для:
+                  сезонных товаров, запасов, медленно оборачиваемых позиций.
+                </p>
+                <p class="text-secondary mb-3">
+                  <strong>Бережное хранение и полный учёт остатков.</strong>
+                </p>
+              </div>
+              <div class="service-image">
+                <span class="service-number">6</span>
+                <img
+                  src="img/additional-services/6.png"
+                  alt="Выгодное хранение"
+                />
+              </div>
             </div>
           </div>
         </section>
+        <section class="about" id="about">
+          <div class="container">
+            <h2 class="section-title">
+              Как мы работаем <span class="gradient-text">4 простых шага:</span>
+            </h2>
 
+            <div class="steps-container">
+              <div class="step-card"><span>1</span> Оставляете заявку</div>
+              <div class="step-card">
+                <span>2</span> Принимаем товар на склад
+              </div>
+              <div class="step-card">
+                <span>3</span> Обрабатываем и упаковываем
+              </div>
+              <div class="step-card">
+                <span>4</span> Отгружаем на маркетплейс
+              </div>
+            </div>
+
+            <p class="slogan">Вы занимаетесь продажами — мы логистикой</p>
+
+            <h3 class="results-title">Результат для вашего бизнеса</h3>
+            <div class="stats-row">
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <img src="img/ico/shield.png" alt="Штрафы" />
+                </div>
+                <p>Меньше штрафов и возвратов</p>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <img src="img/ico/shuttle.png" alt="Рост" />
+                </div>
+                <p>Быстрая отгрузка — рост продаж</p>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <img src="img/ico/tablet.png" alt="Учет" />
+                </div>
+                <p>Чистый складской учёт</p>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <img src="img/ico/wall-clock.png" alt="Время" />
+                </div>
+                <p>Время для масштабирования</p>
+              </div>
+            </div>
+          </div>
+        </section>
         <section id="calculator" class="container section-padding">
           <div class="calc-block">
             <h2 class="section-title">Узнайте стоимость за 1 минуту</h2>
@@ -609,7 +728,7 @@
               </div>
               <div class="faq-answer">
                 <p>
-                  Мы немедленно фиксируем брак на photo или video и отправляем
+                  Мы немедленно фиксируем брак на фото или видео и отправляем
                   отчет вам в мессенджеры (Telegram/WhatsApp). Такой товар
                   откладывается в отдельную зону карантина до ваших
                   распоряжений.
@@ -740,7 +859,9 @@
           <div>
             <p class="footer-title">Контакты</p>
             <p>г. Москва, складской комплекс "Мурмурация"</p>
-            <p class="footer-phone">+7 (945) 909-06-24</p>
+            <p class="footer-phone">
+              <a href="tel:+79459090624">+7 (945) 909-06-24</a>
+            </p>
           </div>
         </div>
         <hr />
@@ -769,7 +890,10 @@
         <button class="art-modal-close" onclick="closeArtModal('modal-gate')">
           &times;
         </button>
-        <img src="img/Южные ворота.png" alt="Складская зона Южные ворота" />
+        <img
+          src="img/hero-images/ Gate.gif"
+          alt="Складская зона Южные ворота"
+        />
       </div>
     </div>
 
@@ -783,25 +907,9 @@
           &times;
         </button>
         <img
-          src="img/Фулфилмент парк.png"
+          src="img/hero-images/Sorting.gif"
           alt="Логистический Фулфилмент парк"
         />
-      </div>
-    </div>
-
-    <div
-      id="modal-storage"
-      class="art-overlay"
-      onclick="closeArtModal('modal-storage')"
-    >
-      <div class="art-modal-content" onclick="event.stopPropagation()">
-        <button
-          class="art-modal-close"
-          onclick="closeArtModal('modal-storage')"
-        >
-          &times;
-        </button>
-        <img src="img/Склад.png" alt="Основной комплекс Склад" />
       </div>
     </div>
 
@@ -862,357 +970,6 @@
       <button id="cookie-accept" class="cookie-btn">Хорошо</button>
     </div>
 
-    <script>
-      // --- 1. ЛУПА / ЗУМ НА КАРТЕ ---
-      const viewport = document.getElementById("viewport");
-      const container = document.getElementById("heroContainer");
-
-      viewport.addEventListener("mousemove", (e) => {
-        if (
-          document.querySelector(".art-overlay.is-visible") ||
-          document.querySelector(".modal-overlay.is-open")
-        )
-          return;
-        const { left, top, width, height } = viewport.getBoundingClientRect();
-        const x = ((e.clientX - left) / width) * 100;
-        const y = ((e.clientY - top) / height) * 100;
-        container.style.transformOrigin = `${x}% ${y}%`;
-        container.style.transform = "scale(2)";
-      });
-
-      viewport.addEventListener("mouseleave", () => {
-        if (!document.querySelector(".art-overlay.is-visible")) {
-          container.style.transform = "scale(1)";
-          container.style.transformOrigin = "center center";
-        }
-      });
-
-      // --- 2. МОДАЛКИ КАРТИНОК С КАРТЫ ---
-      function openArtModal(modalId, event) {
-        if (event) event.stopPropagation();
-        container.style.transform = "scale(1)";
-        container.style.transformOrigin = "center center";
-        const modal = document.getElementById(modalId);
-        modal.classList.add("is-visible");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeArtModal(modalId) {
-        const modal = document.getElementById(modalId);
-        modal.classList.remove("is-visible");
-        document.body.style.overflow = "";
-      }
-
-      // --- 3. МОДАЛКА ЗАКАЗА ЗВОНКА (ОТКРЫТИЕ/ЗАКРЫТИЕ) ---
-      const callModal = document.getElementById("call-modal");
-      const openCallBtn = document.querySelector(".callback-trigger");
-      const closeCallBtn = document.getElementById("close-modal-btn");
-
-      openCallBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        callModal.classList.add("is-open");
-        document.body.style.overflow = "hidden";
-      });
-
-      closeCallBtn.addEventListener("click", function () {
-        callModal.classList.remove("is-open");
-        document.body.style.overflow = "";
-      });
-
-      callModal.addEventListener("click", function (event) {
-        if (event.target === callModal) {
-          callModal.classList.remove("is-open");
-          document.body.style.overflow = "";
-        }
-      });
-
-      // Закрытие ВСЕХ окон по кнопке ESC
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          document
-            .querySelectorAll(".art-overlay")
-            .forEach((m) => m.classList.remove("is-visible"));
-          callModal.classList.remove("is-open");
-          document.body.style.overflow = "";
-        }
-      });
-
-      // --- 4. УМНАЯ МАСКА ТЕЛЕФОНА (Защита от ввода букв) ---
-      const phoneInput = document.getElementById("modal-phone");
-
-      phoneInput.addEventListener("input", function (e) {
-        let input = e.target.value.replace(/\D/g, "");
-        let formatted = "";
-        if (!input) {
-          e.target.value = "";
-          return;
-        }
-        if (input[0] === "7" || input[0] === "8") {
-          input = input.substring(1);
-        }
-
-        formatted = "+7 ";
-        if (input.length > 0) {
-          formatted += "(" + input.substring(0, 3);
-        }
-        if (input.length >= 3) {
-          formatted += ") ";
-        }
-        if (input.length > 3) {
-          formatted += input.substring(3, 6);
-        }
-        if (input.length >= 6) {
-          formatted += "-";
-        }
-        if (input.length > 6) {
-          formatted += input.substring(6, 8);
-        }
-        if (input.length >= 8) {
-          formatted += "-";
-        }
-        if (input.length > 8) {
-          formatted += input.substring(8, 10);
-        }
-        e.target.value = formatted;
-      });
-
-      phoneInput.addEventListener("keydown", function (e) {
-        if (e.key === "Backspace" && e.target.value.length <= 4) {
-          e.target.value = "";
-        }
-      });
-
-      // --- 5. ЛОГИКА ДЛЯ ПЛАШКИ КУКИ ---
-      const cookieBanner = document.getElementById("cookie-notice");
-      const cookieAccept = document.getElementById("cookie-accept");
-
-      if (localStorage.getItem("cookie-accepted") === "true") {
-        cookieBanner.style.display = "none";
-      }
-
-      cookieAccept.addEventListener("click", function () {
-        cookieBanner.style.display = "none";
-        localStorage.setItem("cookie-accepted", "true");
-      });
-
-      // --- 6. СКРОЛЛ И ВАЛИДАЦИЯ EMAIL ---
-      function ScrollToCalc() {
-        document
-          .getElementById("calculator")
-          .scrollIntoView({ behavior: "smooth" });
-      }
-
-      function ValidateBusinessEmail() {
-        const email = document.querySelector("#userEmail").value;
-        const privacyCheck = document.querySelector("#privacy-check");
-
-        if (!email.includes("@") || !email.includes(".")) {
-          alert("Пожалуйста, введите корректный email адрес");
-          return;
-        }
-
-        if (!privacyCheck.checked) {
-          alert(
-            "Пожалуйста, ознакомьтесь и согласитесь с политикой конфиденциальности",
-          );
-          return;
-        }
-
-        alert(
-          "Спасибо! Наш менеджер свяжется с вами и подберет решение для вашего бизнеса.",
-        );
-      }
-
-      // --- 7. Бургер для мобильной версии сайта ---
-      function toggleMobileMenu() {
-        const nav = document.querySelector(".header-nav");
-        nav.classList.toggle("open");
-
-        if (nav.classList.contains("open")) {
-          document.body.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "";
-        }
-      }
-
-      document.querySelectorAll(".header-nav ul li a").forEach((link) => {
-        link.addEventListener("click", () => {
-          const nav = document.querySelector(".header-nav");
-          nav.classList.remove("open");
-          document.body.style.overflow = "";
-        });
-      });
-
-      // --- 8. ФУНКЦИИ ПАРСИНГА РЕАЛЬНЫХ ОТЗЫВОВ (ОБЪЕДИНЕННАЯ И ОЧИЩЕННАЯ) ---
-      async function fetchLiveRatings() {
-        try {
-          const response = await fetch("api-reviews.php");
-          if (!response.ok) throw new Error("Ошибка ответа сервера");
-          const data = await response.json();
-
-          // Обновляем Яндекс
-          if (data.yandex) {
-            document.getElementById("live-ya-rating").innerText =
-              `★ ${data.yandex.rating}`;
-            document.getElementById("live-ya-reviews").innerText =
-              `${data.yandex.reviews} ${getReviewsWord(data.yandex.reviews)}`;
-          }
-
-          // Обновляем Авито с проверкой на прочерки
-          if (data.avito) {
-            if (data.avito.rating === "—" || data.avito.reviews === "—") {
-              document.getElementById("live-avito-rating").innerText = "★ —";
-              document.getElementById("live-avito-reviews").innerText =
-                "нет отзывов";
-            } else {
-              document.getElementById("live-avito-rating").innerText =
-                `★ ${data.avito.rating}`;
-              document.getElementById("live-avito-reviews").innerText =
-                `${data.avito.reviews} ${getReviewsWord(data.avito.reviews)}`;
-            }
-          }
-        } catch (error) {
-          console.error(
-            "Не удалось получить живые отзывы, работают стандартные заглушки из HTML:",
-            error,
-          );
-        }
-      }
-
-      // Умное склонение слова "отзыв"
-      function getReviewsWord(number) {
-        let n = Math.abs(number) % 100;
-        let n1 = n % 10;
-        if (n > 10 && n < 20) return "отзывов";
-        if (n1 > 1 && n1 < 5) return "отзыва";
-        if (n1 === 1) return "отзыв";
-        return "отзывов";
-      }
-
-      // --- 9. ЕДИНЫЙ ИНИЦИАЛИЗАТОР ИВЕНТОВ ПОСЛЕ ЗАГРУЗКИ DOM ---
-      document.addEventListener("DOMContentLoaded", () => {
-        // Инициализация аккордеона FAQ
-        const faqItems = document.querySelectorAll(".faq-item");
-        faqItems.forEach((item) => {
-          const question = item.querySelector(".faq-question");
-          question.addEventListener("click", () => {
-            item.classList.toggle("is-active");
-          });
-        });
-
-        // Запуск парсинга отзывов
-        fetchLiveRatings();
-      });
-      // --- ЛОГИКА ПЛАВАЮЩЕГО (ДОГОНЯЮЩЕГО) МЕНЮ ---
-      const navMenu = document.querySelector(".header-nav");
-      // Запоминаем начальную точку, где меню стоит в шапке по умолчанию
-      const menuInitialTop = navMenu.offsetTop;
-
-      window.addEventListener("scroll", () => {
-        // Проверяем, на сколько пикселей пользователь прокрутил страницу вниз
-        if (window.scrollY > menuInitialTop + 100) {
-          // Если ушли вниз — включаем режим полета
-          navMenu.classList.add("floating");
-        } else {
-          // Если вернулись в самый верх — сажаем меню обратно на его законное место
-          navMenu.classList.remove("floating");
-        }
-      });
-      // --- ЛОГИКА СЛАЙДЕРОВ ДО / ПОСЛЕ ---
-      const sliders = document.querySelectorAll(".before-after-slider");
-
-      sliders.forEach((slider) => {
-        const range = slider.querySelector(".slider-range");
-        const beforeImg = slider.querySelector(".img-before");
-        const line = slider.querySelector(".slider-line");
-
-        range.addEventListener("input", (e) => {
-          const value = e.target.value;
-
-          // Меняем ширину картинки "ДО"
-          beforeImg.style.width = `${value}%`;
-          // Передвигаем вертикальную разделительную линию
-          line.style.left = `${value}%`;
-        });
-      });
-      // --- ЛОГИКА ИНТЕРАКТИВНОГО КАЛЬКУЛЯТОРА ---
-      const rangeItems = document.getElementById("range-items");
-      const rangeVolume = document.getElementById("range-volume");
-      const serviceChecking = document.getElementById("service-checking");
-      const serviceMarking = document.getElementById("service-marking");
-      const serviceBubble = document.getElementById("service-bubble");
-
-      // Элементы вывода данных
-      const valItems = document.getElementById("range-items-val");
-      const valVolume = document.getElementById("range-volume-val");
-      const resBase = document.getElementById("res-base");
-      const resServices = document.getElementById("res-services");
-      const resDiscount = document.getElementById("res-discount");
-      const resTotal = document.getElementById("res-total");
-
-      // Логика визуального переключения табов маркетплейсов
-      const marketOptions = document.querySelectorAll(".market-option");
-      marketOptions.forEach((option) => {
-        option.addEventListener("click", function () {
-          marketOptions.forEach((opt) => opt.classList.remove("active"));
-          this.classList.add("active");
-          calculatePrice();
-        });
-      });
-
-      function calculatePrice() {
-        const count = parseInt(rangeItems.value);
-        const volume = parseFloat(rangeVolume.value);
-
-        // Обновляем циферки рядом с ползунками
-        valItems.innerText = count.toLocaleString("ru-RU");
-        valVolume.innerText = volume.toFixed(1);
-
-        // 1. Считаем базовый тариф (зависит от объема единицы товара)
-        // Допустим, обработка базовой единицы стоит 25 руб + коэффициент от объема
-        let basePerItem = 25 + volume * 2;
-        let baseTotal = count * basePerItem;
-
-        // 2. Считаем доп. услуги (цена за шт * количество)
-        let servicesTotal = 0;
-        if (serviceChecking.checked) servicesTotal += count * 7; // Проверка брака: 7р/шт
-        if (serviceMarking.checked) servicesTotal += count * 5; // Маркировка: 5р/шт
-        if (serviceBubble.checked) servicesTotal += count * 15; // Пупырка: 15р/шт
-
-        // 3. Система скидок за объем (Объемный опт)
-        let discount = 0;
-        if (count >= 1000 && count < 3000) {
-          discount = (baseTotal + servicesTotal) * 0.05; // 5% скидка
-        } else if (count >= 3000 && count < 5000) {
-          discount = (baseTotal + servicesTotal) * 0.1; // 10% скидка
-        } else if (count >= 5000) {
-          discount = (baseTotal + servicesTotal) * 0.15; // 15% скидка
-        }
-
-        // Итоговая сумма
-        let total = baseTotal + servicesTotal - discount;
-
-        // Выводим все красиво на экран форматированным текстом
-        resBase.innerText = `${Math.round(baseTotal).toLocaleString("ru-RU")} ₽`;
-        resServices.innerText = `${Math.round(servicesTotal).toLocaleString("ru-RU")} ₽`;
-        resDiscount.innerText = `-${Math.round(discount).toLocaleString("ru-RU")} ₽`;
-        resTotal.innerText = `${Math.round(total).toLocaleString("ru-RU")} ₽`;
-      }
-
-      // Навешиваем события изменения на все инпуты
-      [
-        rangeItems,
-        rangeVolume,
-        serviceChecking,
-        serviceMarking,
-        serviceBubble,
-      ].forEach((input) => {
-        input.addEventListener("input", calculatePrice);
-        input.addEventListener("change", calculatePrice);
-      });
-
-      // Запускаем первичный расчет при инициализации страницы
-      calculatePrice();
-    </script>
+    <script src="JS/index.js" defer></script>
   </body>
 </html>

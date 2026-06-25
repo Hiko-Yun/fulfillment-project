@@ -3,114 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light only">
     <title>Отзывы клиентов — Мурмурация</title>
     <link rel="stylesheet" href="css/main.css" />
-    <style>
-      /* ==========================================================================
-         ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ ОТЗЫВОВ (reviews.html)
-         ========================================================================== */
-      .reviews-hero {
-        background: #f9faff;
-        padding: 60px 0;
-        text-align: center;
-        border-bottom: 1px solid #eef0f3;
-      }
-      .reviews-hero h1 {
-        font-size: 42px;
-        font-weight: 800;
-        margin-bottom: 15px;
-        letter-spacing: -1px;
-      }
-      .reviews-hero p {
-        color: #616571;
-        font-size: 16px;
-        max-width: 600px;
-        margin: 0 auto 30px auto;
-      }
-
-      /* Контейнер для списка отзывов */
-      .reviews-container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 60px 20px;
-      }
-
-      /* Карточка отзыва */
-      .review-item-card {
-        background: #ffffff;
-        border: 1px solid #eef0f3;
-        border-radius: 16px;
-        padding: 30px;
-        margin-bottom: 25px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease;
-      }
-      .review-item-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-      }
-
-      /* Шапка карточки отзыва */
-      .review-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 15px;
-      }
-      .reviewer-info h5 {
-        font-size: 16px;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 4px;
-      }
-      .reviewer-meta {
-        font-size: 13px;
-        color: #828693;
-      }
-
-      /* Метка источника отзыва (Яндекс, Авито, Сайт) */
-      .review-source-tag {
-        font-size: 12px;
-        font-weight: 700;
-        padding: 4px 12px;
-        border-radius: 20px;
-      }
-      .source-yandex {
-        background: #fff1f1;
-        color: #ff0000;
-      }
-      .source-avito {
-        background: #f0f7ff;
-        color: #00aaff;
-      }
-      .source-site {
-        background: #f3f0ff;
-        color: #7b61ff;
-      }
-
-      /* Звездочки */
-      .review-stars {
-        color: #ffb700;
-        font-size: 14px;
-        margin-bottom: 12px;
-      }
-
-      /* Текст отзыва */
-      .review-text {
-        font-size: 14px;
-        color: #333333;
-        line-height: 1.6;
-      }
-    </style>
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/reviews.css" />
+    <link rel="icon" type="image/png" href="img/company-logos/ICO.png" />
   </head>
   <body>
     <div class="wrapper">
       <header class="container">
         <div class="header-top">
           <a href="./" class="logo">
-            <img src="img/logo.png" alt="Мурмурация — фулфилмент под ключ" />
+            <img
+              src="img/company-logos/logo.png"
+              alt="Мурмурация — фулфилмент под ключ"
+            />
           </a>
 
           <div class="rating-widgets">
@@ -124,13 +32,13 @@
               <span class="reviews" id="live-ya-reviews">15 отзывов</span>
             </a>
             <a
-              href="https://www.avito.ru/"
+              href="https://www.avito.ru/brands/3095c1716e81c2f594d4e2ca49f57278"
               target="_blank"
               class="rating-box avito-box"
             >
               <span class="box-title">Avito</span>
-              <span class="rating" id="live-avito-rating">★ —</span>
-              <span class="reviews" id="live-avito-reviews">— отзывов</span>
+              <span class="rating" id="live-avito-rating">★ 5</span>
+              <span class="reviews" id="live-avito-reviews">21 отзыв</span>
             </a>
           </div>
 
@@ -145,10 +53,13 @@
               >
               <div class="social-icons">
                 <a href="#" target="_blank" rel="noopener">
-                  <img src="img/Telegram.png" alt="Написать нам в Telegram" />
+                  <img
+                    src="img/Соц.сети/Telegram.png"
+                    alt="Написать нам в Telegram"
+                  />
                 </a>
                 <a href="#" target="_blank" rel="noopener">
-                  <img src="img/MAX-512x512.png" alt="Написать нам в Макс" />
+                  <img src="img/Соц.сети/MAX.png" alt="Написать нам в Макс" />
                 </a>
               </div>
             </div>
@@ -264,7 +175,9 @@
           <div>
             <p class="footer-title">Контакты</p>
             <p>г. Москва, складской комплекс "Мурмурация"</p>
-            <p class="footer-phone">+7 (945) 909-06-24</p>
+            <p class="footer-phone">
+              <a href="tel:+79459090624">+7 (945) 909-06-24</a>
+            </p>
           </div>
         </div>
         <hr />
@@ -284,78 +197,6 @@
       </footer>
     </div>
 
-    <script>
-      function openReviewModal() {
-        alert(
-          "Здесь будет открываться форма/модалка 'Оставить отзыв' со звездочками и отправкой модератору на бэкенд!",
-        );
-      }
-
-      // Функция получения живого рейтинга
-      async function fetchLiveRatings() {
-        try {
-          const response = await fetch("api-reviews.php");
-          if (!response.ok) throw new Error("Ошибка ответа сервера");
-          const data = await response.json();
-
-          // Обновляем Яндекс
-          if (data.yandex) {
-            document.getElementById("live-ya-rating").innerText =
-              `★ ${data.yandex.rating}`;
-            document.getElementById("live-ya-reviews").innerText =
-              `${data.yandex.reviews} ${getReviewsWord(data.yandex.reviews)}`;
-          }
-
-          // Обновляем Авито
-          if (data.avito) {
-            if (data.avito.rating === "—" || data.avito.reviews === "—") {
-              document.getElementById("live-avito-rating").innerText = "★ —";
-              document.getElementById("live-avito-reviews").innerText =
-                "нет отзывов";
-            } else {
-              document.getElementById("live-avito-rating").innerText =
-                `★ ${data.avito.rating}`;
-              document.getElementById("live-avito-reviews").innerText =
-                `${data.avito.reviews} ${getReviewsWord(data.avito.reviews)}`;
-            }
-          }
-        } catch (error) {
-          console.error(
-            "Не удалось получить живые отзывы, работают стандартные заглушки:",
-            error,
-          );
-        }
-      }
-
-      // Умное склонение слова "отзыв"
-      function getReviewsWord(number) {
-        let n = Math.abs(number) % 100;
-        let n1 = n % 10;
-        if (n > 10 && n < 20) return "отзывов";
-        if (n1 > 1 && n1 < 5) return "отзыва";
-        if (n1 === 1) return "отзыв";
-        return "отзывов";
-      }
-
-      // Запускаем парсинг сразу после загрузки страницы
-      document.addEventListener("DOMContentLoaded", () => {
-        fetchLiveRatings();
-      });
-      // --- ЛОГИКА ПЛАВАЮЩЕГО (ДОГОНЯЮЩЕГО) МЕНЮ ---
-      const navMenu = document.querySelector('.header-nav');
-      // Запоминаем начальную точку, где меню стоит в шапке по умолчанию
-      const menuInitialTop = navMenu.offsetTop;
-
-      window.addEventListener('scroll', () => {
-        // Проверяем, на сколько пикселей пользователь прокрутил страницу вниз
-        if (window.scrollY > menuInitialTop + 100) {
-          // Если ушли вниз — включаем режим полета
-          navMenu.classList.add('floating');
-        } else {
-          // Если вернулись в самый верх — сажаем меню обратно на его законное место
-          navMenu.classList.remove('floating');
-        }
-      });
-    </script>
+    <script src="JS/reviews.js" defer></script>
   </body>
 </html>

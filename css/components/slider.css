@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину блока */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%; /* Чтобы картинки не вылезали за пределы экрана */
+  height: auto;
+}
+
+body {
+  overflow-x: hidden; /* Чтобы сайт не скроллился влево-вправо */
+}
 /* ==========================================================================
    СЛАЙДЕРЫ ДО / ПОСЛЕ (BEFORE-AFTER SLIDER)
    ========================================================================== */
@@ -149,4 +163,42 @@
 .badge-after {
   right: 15px;
   background: rgba(46, 204, 113, 0.85);
+}
+
+/* --- АДАПТАЦИЯ СЛАЙДЕРА ДО/ПОСЛЕ --- */
+@media screen and (max-width: 768px) {
+  .slider-range {
+    /* Делаем зону нажатия шире, чем сам ползунок */
+    padding: 20px 0;
+    /* Это позволит пальцу легче "цеплять" ползунок */
+  }
+
+  /* Добавим эффект при нажатии, чтобы пользователь понимал, что он попал */
+  .slider-range:active + .slider-button {
+    transform: translate(-50%, -50%) scale(1.2);
+    transition: transform 0.2s;
+  }
+}
+.before-after-slider {
+  height: 200px; /* Уменьшаем высоту для мобилок, чтобы картинка не сплющивалась */
+}
+
+/* Чтобы картинки внутри не искажались */
+.slider-img img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Уменьшаем размер кнопки на мобилке, чтобы не закрывала пол-экрана */
+.slider-button {
+  width: 30px;
+  height: 30px;
+  border-width: 2px;
+}
+
+/* Плашки делаем поменьше */
+.slider-badge {
+  top: 10px;
+  padding: 2px 6px;
+  font-size: 9px;
 }

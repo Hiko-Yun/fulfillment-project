@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину блока */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%; /* Чтобы картинки не вылезали за пределы экрана */
+  height: auto;
+}
+
+body {
+  overflow-x: hidden; /* Чтобы сайт не скроллился влево-вправо */
+}
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;

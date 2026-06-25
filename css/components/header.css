@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину блока */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%; /* Чтобы картинки не вылезали за пределы экрана */
+  height: auto;
+}
+
+body {
+  overflow-x: hidden; /* Чтобы сайт не скроллился влево-вправо */
+}
 /* ==========================================================================
    2. ШАПКА САЙТА (HEADER)
    ========================================================================== */
@@ -130,4 +144,72 @@ html {
 .header-nav ul li a:hover,
 .header-nav ul li.active a {
   color: #7b61ff;
+}
+
+/* ==========================================================================
+   МОБИЛЬНАЯ ВЕРСИЯ (ОБЪЕДИНЕННАЯ)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Показываем бургер и крестик */
+  .burger-menu-btn {
+    display: block !important;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .burger-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #1a1a1a;
+    margin: 5px 0;
+  }
+
+  .close-menu-btn {
+    display: block !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: #1a1a1a;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  /* 2. Стилизация мобильного меню */
+  .header-nav {
+    display: none; /* Скрыто по умолчанию на мобилках */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9999;
+    flex-direction: column;
+    padding-top: 80px;
+  }
+
+  /* 3. Класс .open для JS */
+  .header-nav.open {
+    display: flex !important;
+  }
+
+  /* 4. Контейнер и список внутри меню */
+  .header-nav-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .header-nav ul li a {
+    font-size: 20px;
+  }
 }

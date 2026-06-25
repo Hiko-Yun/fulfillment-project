@@ -1,3 +1,31 @@
+* {
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину блока */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%; /* Чтобы картинки не вылезали за пределы экрана */
+  height: auto;
+}
+
+body {
+  overflow-x: hidden; /* Чтобы сайт не скроллился влево-вправо */
+}
+* {
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину блока */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%; /* Чтобы картинки не вылезали за пределы экрана */
+  height: auto;
+}
+
+body {
+  overflow-x: hidden; /* Чтобы сайт не скроллился влево-вправо */
+}
 /* ==========================================================================
    7. СЕКЦИЯ КАЛЬКУЛЯТОРА И FAQ
    ========================================================================== */
@@ -87,4 +115,40 @@
 .faq-item.is-active .faq-toggle-icon {
   transform: rotate(45deg);
   color: #ff7a50;
+}
+
+/* --- АДАПТАЦИЯ КАЛЬКУЛЯТОРА И FAQ --- */
+@media screen and (max-width: 768px) {
+  /* Ужимаем отступы калькулятора, чтобы он влез в экран */
+  .calc-block {
+    padding: 30px 15px !important; /* Уменьшили с 60/40 до 30/15 */
+    border-radius: 16px;
+  }
+
+  .calc-subtitle {
+    margin-top: -15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .calc-placeholder {
+    padding: 30px 15px; /* Чтобы не выглядело растянуто */
+  }
+
+  /* FAQ */
+  .faq-list {
+    padding: 0 10px; /* Даем чуть больше места для текста */
+  }
+
+  .faq-item {
+    padding: 15px 20px; /* Чуть компактнее */
+  }
+
+  .faq-question {
+    font-size: 15px; /* Чуть уменьшаем, чтобы вопрос не съезжал на 3 строки */
+  }
+
+  .faq-answer {
+    font-size: 13px; /* Текст ответа становится чуть меньше для удобства чтения */
+  }
 }

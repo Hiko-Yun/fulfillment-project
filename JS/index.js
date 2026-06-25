@@ -163,25 +163,23 @@ function ValidateBusinessEmail() {
   );
 }
 
-// --- 7. Бургер для мобильной версии сайта ---
+// --- 7. Бургер и меню для мобильной версии ---
 function toggleMobileMenu() {
   const nav = document.querySelector(".header-nav");
-  nav.classList.toggle("open");
+  const isOpen = nav.classList.toggle("open");
 
-  if (nav.classList.contains("open")) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "";
-  }
+  // Если меню открыто — запрещаем скролл, если закрыто — разрешаем
+  document.body.style.overflow = isOpen ? "hidden" : "";
 }
 
+// Закрытие при клике по любой ссылке внутри меню
 document.querySelectorAll(".header-nav ul li a").forEach((link) => {
   link.addEventListener("click", () => {
     const nav = document.querySelector(".header-nav");
     nav.classList.remove("open");
     document.body.style.overflow = "";
   });
-});
+}); 
 
 // --- 8. ФУНКЦИИ ПАРСИНГА РЕАЛЬНЫХ ОТЗЫВОВ (ОБЪЕДИНЕННАЯ И ОЧИЩЕННАЯ) ---
 async function fetchLiveRatings() {

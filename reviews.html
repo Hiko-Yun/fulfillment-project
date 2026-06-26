@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light only">
+    <meta name="color-scheme" content="light only" />
     <title>Отзывы клиентов — Мурмурация</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/components/header.css" />
     <link rel="stylesheet" href="css/reviews.css" />
-    <link rel="icon" type="image/png" href="img/company-logos/ICO.png" />
+    <link rel="icon" type="image/png" href="img/company-logos/icon.png" />
   </head>
   <body>
     <div class="wrapper">
@@ -54,27 +54,38 @@
               <div class="social-icons">
                 <a href="#" target="_blank" rel="noopener">
                   <img
-                    src="img/Соц.сети/Telegram.png"
+                    src="img/social-media/Telegram.png"
                     alt="Написать нам в Telegram"
                   />
                 </a>
                 <a href="#" target="_blank" rel="noopener">
-                  <img src="img/Соц.сети/MAX.png" alt="Написать нам в Макс" />
+                  <img
+                    src="img/social-media/MAX.png"
+                    alt="Написать нам в Макс"
+                  />
                 </a>
               </div>
             </div>
           </div>
         </div>
-
+        <button
+          class="burger-menu-btn"
+          onclick="toggleMobileMenu()"
+          aria-label="Меню"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="header-nav">
           <ul>
             <li><a href="./">Главная</a></li>
-            <li><a href="./#price">Прайс</a></li>
             <li><a href="./#calculator">Калькулятор</a></li>
             <li><a href="./#examples">Примеры работ</a></li>
             <li class="active"><a href="reviews.html">Отзывы</a></li>
             <li><a href="./#faq">Вопросы</a></li>
             <li><a href="contact.html">Контакты</a></li>
+            <li class="mobile-only"><a href="about.html">О нас</a></li>
           </ul>
         </nav>
       </header>
@@ -167,7 +178,6 @@
           <div>
             <p class="footer-title">Навигация</p>
             <ul>
-              <li><a href="./#price">Прайс</a></li>
               <li><a href="./#calculator">Калькулятор</a></li>
               <li><a href="./#faq">FAQ</a></li>
             </ul>

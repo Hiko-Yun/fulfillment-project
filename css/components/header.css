@@ -81,8 +81,8 @@ html {
 }
 
 .social-icons img {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: auto;
 }
 
 /* Бургер по умолчанию скрыт на ПК */
@@ -146,17 +146,93 @@ html {
   color: #7b61ff;
 }
 
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
 /* ==========================================================================
-   МОБИЛЬНАЯ ВЕРСИЯ (ОБЪЕДИНЕННАЯ)
+   МОБИЛЬНАЯ ВЕРСИЯ
    ========================================================================== */
 @media (max-width: 768px) {
-  /* 1. Показываем бургер и крестик */
+  .services img {
+    display: block; /* Обязательно, чтобы сработал auto */
+    max-width: 50%; /* Твой размер */
+    margin: 0 auto; /* 0 — сверху/снизу, auto — слева/справа */
+  }
+
+  .mobile-only {
+    display: block !important; /* Или display: list-item, если это li */
+  }
+
+  .process-flow {
+    display: none !important; /* Полностью убирает блок с экрана */
+  }
+
+  /* 1. Добавляем "воздух" по бокам, чтобы ничего не липло */
+  .header-top {
+    padding: 15px !important;
+  }
+
+  /* 2. Компактные контакты в одну строку */
+  .header-contacts {
+    gap: 10px; /* Уменьшаем расстояние между блоками */
+    scale: 0.8; /* Немного уменьшаем весь блок контактов, чтобы влез */
+    transform-origin: right center; /* Уменьшаем относительно правого края */
+  }
+
+  /* Убираем лишние отступы внутри контактов */
+  .callback-links {
+    gap: 2px;
+  }
+
+  .callback-links a {
+    font-size: 11px; /* Чуть меньше шрифт */
+  }
+
+  .phone-number {
+    font-size: 20px; /* Чуть меньше номер */
+  }
+
+  /* 3. Бургер оставляем на месте, но он теперь в потоке с контактами */
   .burger-menu-btn {
     display: block !important;
-    background: none;
+    margin-left: 10px;
+    padding: 5px;
+  }
+
+  /* 4. Настройка мобильного меню (как и было) */
+  .header-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9999;
+    flex-direction: column;
+    padding-top: 80px;
+  }
+  /* Бургер */
+  .burger-menu-btn {
+    display: block !important;
+    background: white;
     border: none;
     cursor: pointer;
     padding: 10px;
+    border-radius: 8px;
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
+
+  .burger-menu-btn.floating {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
   }
 
   .burger-menu-btn span {
@@ -167,20 +243,9 @@ html {
     margin: 5px 0;
   }
 
-  .close-menu-btn {
-    display: block !important;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 40px;
-    color: #1a1a1a;
-    cursor: pointer;
-    z-index: 10000;
-  }
-
-  /* 2. Стилизация мобильного меню */
+  /* Мобильное меню */
   .header-nav {
-    display: none; /* Скрыто по умолчанию на мобилках */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -192,12 +257,10 @@ html {
     padding-top: 80px;
   }
 
-  /* 3. Класс .open для JS */
   .header-nav.open {
     display: flex !important;
   }
 
-  /* 4. Контейнер и список внутри меню */
   .header-nav-container {
     flex-direction: column;
     gap: 30px;
@@ -211,5 +274,32 @@ html {
 
   .header-nav ul li a {
     font-size: 20px;
+  }
+
+  /* Крестик */
+  .close-menu-btn {
+    display: none !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .header-nav.open .close-menu-btn {
+    display: block !important;
+  }
+  .burger-menu-btn {
+    display: block !important;
+    position: relative; /* Чтобы она была в потоке, пока не скроллишь */
+    z-index: 10002 !important; /* Ставим выше всего (меню у нас 9999) */
+  }
+
+  /* Если меню открыто, бургер все равно должен быть виден */
+  .header-nav.open ~ .burger-menu-btn {
+    display: block !important;
   }
 }

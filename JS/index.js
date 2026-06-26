@@ -2,25 +2,50 @@
 const viewport = document.getElementById("viewport");
 const container = document.getElementById("heroContainer");
 
-viewport.addEventListener("mousemove", (e) => {
+function handleScale(e) {
   if (
     document.querySelector(".art-overlay.is-visible") ||
     document.querySelector(".modal-overlay.is-open")
   )
     return;
+
   const { left, top, width, height } = viewport.getBoundingClientRect();
   const x = ((e.clientX - left) / width) * 100;
   const y = ((e.clientY - top) / height) * 100;
   container.style.transformOrigin = `${x}% ${y}%`;
   container.style.transform = "scale(2)";
-});
+}
 
-viewport.addEventListener("mouseleave", () => {
+function resetScale() {
   if (!document.querySelector(".art-overlay.is-visible")) {
     container.style.transform = "scale(1)";
     container.style.transformOrigin = "center center";
   }
-});
+}
+
+// Проверка ширины экрана
+function checkViewport() {
+  if (window.innerWidth > 768) {
+    // Включаем эффект только на десктопе
+    viewport.addEventListener("mousemove", handleScale);
+    viewport.addEventListener("mouseleave", resetScale);
+  } else {
+    // На мобильных устройствах:
+    // 1. Убираем обработчики, если они были
+    viewport.removeEventListener("mousemove", handleScale);
+    viewport.removeEventListener("mouseleave", resetScale);
+
+    // 2. Принудительно сбрасываем стили, чтобы ничего не "залипло"
+    container.style.transform = "scale(1)";
+    container.style.transformOrigin = "center center";
+  }
+}
+
+// Запускаем при загрузке
+checkViewport();
+
+// Запускаем при изменении размера окна (если пользователь повернул телефон)
+window.addEventListener("resize", checkViewport);
 
 // --- 2. МОДАЛКИ КАРТИНОК С КАРТЫ ---
 function openArtModal(modalId, event) {
@@ -179,7 +204,24 @@ document.querySelectorAll(".header-nav ul li a").forEach((link) => {
     nav.classList.remove("open");
     document.body.style.overflow = "";
   });
-}); 
+});
+
+const burger = document.querySelector(".burger-menu-btn");
+const headerTop = document.querySelector(".header-top");
+
+window.addEventListener("scroll", () => {
+  // Если ширина экрана мобильная
+  if (window.innerWidth <= 768) {
+    // Высота шапки, после которой кнопка должна прилипнуть
+    const triggerHeight = headerTop.offsetHeight;
+
+    if (window.scrollY > triggerHeight) {
+      burger.classList.add("floating");
+    } else {
+      burger.classList.remove("floating");
+    }
+  }
+});
 
 // --- 8. ФУНКЦИИ ПАРСИНГА РЕАЛЬНЫХ ОТЗЫВОВ (ОБЪЕДИНЕННАЯ И ОЧИЩЕННАЯ) ---
 async function fetchLiveRatings() {

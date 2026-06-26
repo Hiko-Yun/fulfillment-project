@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/components/header.css" />
     <link rel="stylesheet" href="css/components/slider.css" />
     <link rel="stylesheet" href="css/don't-touch/bugabuga.css" />
-    <link rel="icon" type="image/png" href="img/company-logos/ICO.png" />
+    <link rel="icon" type="image/png" href="img/company-logos/icon.png" />
   </head>
   <body>
     <div class="wrapper">
@@ -73,16 +73,24 @@
             </div>
           </div>
         </div>
-
+        <button
+          class="burger-menu-btn"
+          onclick="toggleMobileMenu()"
+          aria-label="Меню"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="header-nav">
           <ul>
             <li><a href="./">Главная</a></li>
-            <li><a href="./#price">Прайс</a></li>
             <li><a href="./#calculator">Калькулятор</a></li>
             <li><a href="./#examples">Примеры работ</a></li>
             <li><a href="reviews.html">Отзывы</a></li>
             <li><a href="./#faq">Вопросы</a></li>
             <li><a href="contact.html">Контакты</a></li>
+            <li class="mobile-only"><a href="about.html">О нас</a></li>
           </ul>
         </nav>
       </header>
@@ -184,7 +192,7 @@
               <img src="img/partner-logos/SKIFREE.png" alt="SKIFREE" />
               <img src="img/partner-logos/Terro-black-g.png" alt=" g" />
               <img src="img/partner-logos/Terro-black.png" alt="" />
-              <img src="img/partner-logos/Terro-white g.png" alt="" />
+              <img src="img/partner-logos/Terro-white-g.png" alt="" />
               <img src="img/partner-logos/Terro-white.png" alt="" />
             </div>
           </div>
@@ -318,7 +326,7 @@
                 </div>
                 <div class="slider-img img-before">
                   <img
-                    src="img/packaging-examples/kombinir-fanernaya-tara-198.jpg"
+                    src="img/packaging-examples/mess.jpg"
                     alt="До паллетирования"
                   />
                   <span class="slider-badge badge-before">До</span>
@@ -839,7 +847,6 @@
           <div>
             <p class="footer-title">Навигация</p>
             <ul>
-              <li><a href="#price">Прайс</a></li>
               <li><a href="#calculator">Калькулятор</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
@@ -879,7 +886,7 @@
           &times;
         </button>
         <img
-          src="img/hero-images/ Gate.gif"
+          src="img/hero-images/South-Gate.gif"
           alt="Складская зона Южные ворота"
         />
       </div>

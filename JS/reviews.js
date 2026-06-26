@@ -69,3 +69,37 @@ window.addEventListener("scroll", () => {
     navMenu.classList.remove("floating");
   }
 });
+
+function toggleMobileMenu() {
+  const nav = document.querySelector(".header-nav");
+  const isOpen = nav.classList.toggle("open");
+
+  // Если меню открыто — запрещаем скролл, если закрыто — разрешаем
+  document.body.style.overflow = isOpen ? "hidden" : "";
+}
+
+// Закрытие при клике по любой ссылке внутри меню
+document.querySelectorAll(".header-nav ul li a").forEach((link) => {
+  link.addEventListener("click", () => {
+    const nav = document.querySelector(".header-nav");
+    nav.classList.remove("open");
+    document.body.style.overflow = "";
+  });
+});
+
+const burger = document.querySelector(".burger-menu-btn");
+const headerTop = document.querySelector(".header-top");
+
+window.addEventListener("scroll", () => {
+  // Если ширина экрана мобильная
+  if (window.innerWidth <= 768) {
+    // Высота шапки, после которой кнопка должна прилипнуть
+    const triggerHeight = headerTop.offsetHeight;
+
+    if (window.scrollY > triggerHeight) {
+      burger.classList.add("floating");
+    } else {
+      burger.classList.remove("floating");
+    }
+  }
+});
